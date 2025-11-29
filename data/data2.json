@@ -1,0 +1,1590 @@
+{
+  "data": {
+    "posts": {
+      "edges": [
+        {
+          "node": {
+            "id": "1042085",
+            "name": "Qoder JetBrains Plugin",
+            "tagline": "Understands your backend's real complexity, not just syntax",
+            "description": "### Details\nQoder is a revolutionary AI plugin specifically engineered for JetBrains environments, designed to address the unique challenges of backend development. Unlike standard coding assistants that only read the surface-level syntax of your current file, Qoder dives deep into the architectural reality of your project. It is built to understand complex systems, capable of analyzing repositories with over 100,000 files without losing context. By bridging the gap between code and architecture, it serves as a true partner for backend engineers working on massive, intricate codebases.\n\n### Features\n* **Deep Architectural Analysis:** Directly accesses and interprets Spring Bean graphs and database schemas to understand how components interact.\n* **Framework Semantics:** Goes beyond text processing to understand the specific rules and logic of your backend frameworks.\n* **Large Scale Context:** Optimized to provide intelligent, context-aware suggestions even in massive repositories exceeding 100k files.\n* **Privacy Focused:** Operates within your environment to ensure code security while delivering advanced insights.",
+            "website": "https://www.producthunt.com/r/VEHI5WFLFDBW7X?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Code"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Beta",
+                "pricing in usd": "0",
+                "description": "Free during public beta"
+              },
+              {
+                "plan-type": "Pro",
+                "pricing in usd": "19",
+                "description": "Advanced context for large repos"
+              }
+            ],
+            "founder": {
+              "name": "Zhipeng Zuo",
+              "mail": "zhipeng@qoder.ai"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/1d701bab-ba90-43a7-97ea-fbfa96b99a6d.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/ddbcbe63-ff4d-450e-94e1-e9895be92d83.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/8b8abfcb-980a-473a-ac2f-702dc16d5a23.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/a9583f68-a768-478b-9b60-e9240fe6cbcb.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/d978dc4e-aae9-407e-8f37-14dd0639f819.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/8fc5868d-5cfe-49c2-8576-867f0f01876f.jpeg?auto=format",
+                "type": "video"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "267",
+                    "name": "Developer Tools"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "1194",
+                    "name": "Vibe coding"
+                  }
+                }
+              ]
+            },
+            "votesCount": 191
+          }
+        },
+        {
+          "node": {
+            "id": "1031958",
+            "name": "Agenta",
+            "tagline": "Open-source prompt management & evals for AI teams",
+            "description": "### Details\nAgenta is a robust, open-source LLMOps platform designed to streamline the workflow for AI teams building Large Language Model applications. It addresses the fragmentation often found in AI development by providing a unified space for developers and domain experts to collaborate effectively. By focusing on reliability and speed, Agenta removes the guesswork from deploying AI apps, allowing teams to iterate faster and ship with confidence. Whether you are self-hosting for maximum control or using the managed cloud version, Agenta provides the essential infrastructure needed to mature your AI development process.\n\n### Features\n* **Prompt Management:** Centralize, version, and manage all your prompts in one accessible location.\n* **Rigorous Evaluations:** Run comprehensive evaluation pipelines to test model performance against real-world scenarios.\n* **Trace Debugging:** deeply analyze and debug complex traces to understand model reasoning and failure points.\n* **Collaboration Tools:** Dedicated features that enable domain experts and developers to work side-by-side on prompt engineering.",
+            "website": "https://www.producthunt.com/r/DOTIDTOPCGHKIL?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Code",
+              "For Text"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Open Source",
+                "pricing in usd": "0",
+                "description": "Self-hosted, MIT License"
+              },
+              {
+                "plan-type": "Cloud Starter",
+                "pricing in usd": "40",
+                "description": "Managed hosting per seat/month"
+              }
+            ],
+            "founder": {
+              "name": "Mahmoud Mabrouk",
+              "mail": "mahmoud@agenta.ai"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/ad3a1e8e-be9f-49da-a31d-9b6d13ee846f.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/3fddaa9d-0b0b-4e17-acfc-6b71ca219f29.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/a729ed57-25d8-4ec5-85a7-af146f601b26.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/52d3549a-043c-4a47-9316-7560f50899c7.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/1add5e17-cdd0-41d0-85c4-e2fdf3fdb78a.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/24f1c600-5934-433a-915b-580fa8b32995.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/7d743356-9ff3-4afc-abf3-65de96b0b4a9.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "89",
+                    "name": "Open Source"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "267",
+                    "name": "Developer Tools"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 139
+          }
+        },
+        {
+          "node": {
+            "id": "1034022",
+            "name": "Calk AI 1.0",
+            "tagline": "AI Agents without nodes headaches",
+            "description": "### Details\nCalk AI 1.0 is designed to democratize automation by eliminating the steep learning curve associated with complex, node-based workflow tools. It offers a suite of intuitive AI agents that integrate directly with your existing data and tools to automate repetitive tasks. The platform is built around the philosophy of helping humans move faster by offloading the heavy lifting of data processing, reporting, and system updates to intelligent agents. You simply describe the task in plain language, and Calk AI handles the execution, making advanced automation accessible to non-technical users.\n\n### Features\n* **Node-Free Automation:** No complex flowcharts or node connections required; just pure, agent-based task execution.\n* **Natural Language Control:** Describe your tasks in plain English, and the agents will interpret and execute them.\n* **Data Integration:** Seamlessly connects with your existing tools to clean data, write content, and generate reports.\n* **Zero-Maintenance:** Agents handle the updates and operational overhead, allowing you to focus on high-value work.",
+            "website": "https://www.producthunt.com/r/JWY4CMBJGOQMWO?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Writing",
+              "For Text"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Free",
+                "pricing in usd": "0",
+                "description": "Basic agents and templates"
+              },
+              {
+                "plan-type": "Pro",
+                "pricing in usd": "29",
+                "description": "Unlimited agents & premium integrations"
+              }
+            ],
+            "founder": {
+              "name": "Flo Merian",
+              "mail": "flo@calk.ai"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/b74133b3-4001-4561-acbb-29236151f118.gif?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/399739fa-fb5b-409d-b5c4-83e4b9b4867f.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/d0c74aaa-2498-494e-bf6b-dd05679ffe42.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/4694c3dd-54b4-4209-a564-62cf3edd393f.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/1fc26f0c-d921-44e4-8537-104d7c601d59.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/7be1c42b-3bb8-46d5-8285-95277b2dd979.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/f0c19a60-f050-4543-a6cf-6011e86a9db2.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/83d9db7a-a5ad-4438-ae50-641f5e835f8e.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/09b8ad39-b4dd-4f30-a1d5-6e1ea6a9ad3c.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/cf9d3f68-8026-4330-b70b-0d3c844ccd85.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/90546977-bbcc-4cdc-864d-d5d1d24662e9.jpeg?auto=format",
+                "type": "video"
+              },
+              {
+                "url": "https://ph-files.imgix.net/8dcfbe9f-5dbd-47c3-a2a8-00912fadba2b.png?auto=format",
+                "type": "interactive_demo"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "46",
+                    "name": "Productivity"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "237",
+                    "name": "SaaS"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 108
+          }
+        },
+        {
+          "node": {
+            "id": "559960",
+            "name": "Predictive AI",
+            "tagline": "Image and Video Enhancement and Analysis Platform",
+            "description": "### Details\nPredictive AI acts as a sophisticated suite for image and video enhancement, specifically engineered for high-stakes environments such as legal and judicial proceedings. By utilizing transformative-based AI technologies that surpass standard market capabilities, the platform offers deep forensic analysis and clarity enhancement. It is currently being used to assist in critical court cases, aiding in decisions regarding defendant prosecution and early release. This is not just a filter tool; it is an enterprise-grade solution designed to uncover hidden details in visual evidence.\n\n### Features\n* **Forensic Enhancement:** Advanced algorithms clarify low-quality footage to reveal critical details for analysis.\n* **Judicial Application:** tailored for use in legal settings, ensuring data integrity for court presentations.\n* **Transformative AI:** uses next-generation models to go beyond simple upscaling or noise reduction.\n* **Enterprise Security:** Built to handle sensitive data with strict privacy and security standards.",
+            "website": "https://www.producthunt.com/r/ZFEU226SPPH4QH?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "Generate Image",
+              "Generate Video",
+              "For Editing"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Enterprise",
+                "pricing in usd": "Custom",
+                "description": "Contact sales for judicial & enterprise quotes"
+              }
+            ],
+            "founder": {
+              "name": "Predictive AI Team",
+              "mail": "contact@predictive.ai"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/db8d9a91-0a2d-4d56-a17c-867415eeacfb.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/cf6084ce-91d4-4f2f-a147-d3ddbd782c44.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/4a141be0-0691-4735-a3df-3f2d2fcd5af0.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/ef64e3f3-37dc-4913-aa7e-b8f369ccb280.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/18f006c3-53e7-473c-9f91-583bf6e8b0d0.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/72ccc3cf-f95d-4e7d-abbf-4e80e80eec5c.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/4cec81b5-f84d-4af8-a0d9-255491db5a28.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/588186b3-2f4f-48cc-8197-b09b78a92a35.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/4bfc4afd-3a60-40b5-ad43-a6d7738cfb28.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/cad599bd-31b5-48e9-a50b-40d058a27255.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/d33b2de3-f2d1-4d22-82c7-f4336fa70cc4.gif?auto=format",
+                "type": "video"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "692",
+                    "name": "Photo & Video"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "765",
+                    "name": "Operations"
+                  }
+                }
+              ]
+            },
+            "votesCount": 100
+          }
+        },
+        {
+          "node": {
+            "id": "1043072",
+            "name": "FraudLens AI",
+            "tagline": "Detect Fraud Faster with Intelligent Automation",
+            "description": "### Details\nFraudLens AI is a next-generation security platform that modernizes fraud detection through intelligent automation and real-time analysis. Moving beyond traditional rule-based checks that often miss sophisticated attacks, FraudLens employs advanced vector search and similarity detection to identify threats instantly. It is built to handle volume, capable of processing large transaction files in chunks to ensure no data point is overlooked. The platform not only flags issues but provides human-readable AI explanations, empowering teams to make fast, informed decisions without digging through raw logs.\n\n### Features\n* **Smart Vector Search:** Detects duplicates and similarity threats that traditional rules miss.\n* **Automated Explanations:** Provides clear, natural language reasons for why a transaction was flagged.\n* **High-Volume Processing:** Efficiently analyzes massive transaction files in chunks for scalability.\n* **Developer Friendly:** Includes API keys, webhooks, and asynchronous workers for seamless integration into existing stacks.",
+            "website": "https://www.producthunt.com/r/SVPOSDWLFVQFY7?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Code"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Starter",
+                "pricing in usd": "99",
+                "description": "Up to 10k monthly checks"
+              },
+              {
+                "plan-type": "Business",
+                "pricing in usd": "299",
+                "description": "50k checks + API access"
+              }
+            ],
+            "founder": {
+              "name": "FraudLens Team",
+              "mail": "support@fraudlens.ai"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/959f300e-db38-42b5-a818-0555a5551d81.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/69423c2f-9510-46c7-bff5-426d1cf631d7.jpeg?auto=format",
+                "type": "video"
+              },
+              {
+                "url": "https://ph-files.imgix.net/61c5f4b9-bcf6-4c8a-b877-09f43554f204.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/08072551-28df-4285-9e23-13b864ea796b.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/6a93848c-92a4-4a7d-bc67-e31c6e8bec59.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/c3d0453f-571a-47ad-8274-b6b8ec8564d1.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/082135b9-4ebc-4185-b3cb-e4edcf67b870.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/0cc7f7d7-4983-43b9-92cd-eb3292242ad9.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "237",
+                    "name": "SaaS"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "352",
+                    "name": "Tech"
+                  }
+                }
+              ]
+            },
+            "votesCount": 90
+          }
+        },
+        {
+          "node": {
+            "id": "1041229",
+            "name": "Livespace.ai",
+            "tagline": " Get paid for your designs Every time they’re tried",
+            "description": "### Details\nLivespace.ai is the first-ever creator platform explicitly built for interior designers, solving the long-standing issue of \"buried work.\" Traditionally, a designer's best concepts sit in local folders after a project ends. Livespace.ai changes this dynamic by turning every design into a permanent, monetizable asset. It allows designers to upload their work to a global marketplace where it can be discovered, followed, and purchased by users worldwide. This transforms interior design from a service-based model into a scalable brand and passive income source, giving designers the tools to capitalize on their creativity indefinitely.\n\n### Features\n* **Global Portfolio:** Instantly showcase your designs to a worldwide audience ready to buy.\n* **Passive Monetization:** Get paid every time your design is tried or used, creating recurring revenue.\n* **Advanced Analytics:** (Pro Tier) Gain insights into which designs are performing best to optimize your portfolio.\n* **Booking Integration:** Allows users to not just buy designs, but book you for custom work directly.",
+            "website": "https://www.producthunt.com/r/DGPG5MOTKQYCTR?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Design"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Creator",
+                "pricing in usd": "0",
+                "description": "Free to upload & monetize designs"
+              },
+              {
+                "plan-type": "Pro Portfolio",
+                "pricing in usd": "15",
+                "description": "Advanced analytics & priority listing"
+              }
+            ],
+            "founder": {
+              "name": "Pranav",
+              "mail": "pranav@livespace.ai"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/4d8ca206-5053-4407-b284-523d4ddb1b84.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/51d26741-2c15-4b9e-8ffa-9ce10fba802e.jpeg?auto=format",
+                "type": "video"
+              },
+              {
+                "url": "https://ph-files.imgix.net/7fe88609-0ba5-4547-99f4-97530882f15d.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/0fe5c4ea-7786-40bc-b6c6-fb264ff7916a.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/5edc8d03-32a2-4a9b-b7cc-bc22e6357c49.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/2ac7cec5-1ec0-486a-9fec-d42f2ac1c1ea.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/6e751577-348e-4fdf-a8aa-b5f2729ad3f1.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "374",
+                    "name": "Money"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "825",
+                    "name": "Interior design"
+                  }
+                }
+              ]
+            },
+            "votesCount": 75
+          }
+        },
+        {
+          "node": {
+            "id": "1042895",
+            "name": "Micro Deals",
+            "tagline": "The right app, at the best price.",
+            "description": "### Details\nMicro Deals is the dedicated marketplace for discovering the best software discounts and exclusive offers hosted on the Microlaunch platform. It serves as a bridge between budget-conscious users and high-quality SaaS products, ensuring that you can access the right tools without overspending. The platform is curated to highlight significant price drops and special promotions for marketing, sales, and AI development tools. By centralizing these offers, Micro Deals saves users the time of hunting for coupons and provides a reliable source for verified software bargains.\n\n### Features\n* **Curated Discounts:** A hand-picked selection of the best deals on the Microlaunch network.\n* **Category Filtering:** Easily find deals for specific needs like Marketing, Sales, or AI.\n* **Free Access:** The platform is completely free for users to browse and claim deals.\n* **Direct Savings:** Connects you directly to the offer source for immediate price reductions.",
+            "website": "https://www.producthunt.com/r/IM5HCV2AMR3CNC?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Free",
+                "pricing in usd": "0",
+                "description": "Free for users to browse deals"
+              }
+            ],
+            "founder": {
+              "name": "Microlaunch Team",
+              "mail": "hello@microlaunch.net"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/82c44058-de0b-4bd4-a711-6de855459967.x-icon?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/58d35915-e81f-4e38-971a-f84f31fe10a9.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "71",
+                    "name": "Sales"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "164",
+                    "name": "Marketing"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 18
+          }
+        },
+        {
+          "node": {
+            "id": "1043370",
+            "name": "DeepSeekMath-V2",
+            "tagline": "IMO Gold level reasoning, fully open.",
+            "description": "### Details\nDeepSeekMath-V2 represents a major milestone in open-source artificial intelligence, specifically targeting the domain of advanced mathematical reasoning. Unlike general-purpose models, this AI is fine-tuned to handle complex proofs and logic puzzles with elite proficiency. It features a pioneering self-verification mechanism where the model acts as its own critic, generating solutions and then verifying them to iteratively improve accuracy. This rigorous process has yielded impressive results, including Gold-level performance at the IMO 2025 and a near-perfect score on the Putnam 2024 exam, making it a powerful tool for researchers and mathematicians.\n\n### Features\n* **Self-Verification:** A unique dual-process capability where the model generates and then verifies its own proofs.\n* **Elite Performance:** Achieved Gold level at IMO 2025 and scored 118/120 on the Putnam 2024.\n* **Fully Open Source:** Available freely for the community via HuggingFace and GitHub.\n* **API Access:** Offers usage-based API access for developers needing scalable integration.",
+            "website": "https://www.producthunt.com/r/FPEJSGAY2CLCAD?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Text",
+              "For Code"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Open Source",
+                "pricing in usd": "0",
+                "description": "Free via HuggingFace/Github"
+              },
+              {
+                "plan-type": "API Access",
+                "pricing in usd": "Usage Based",
+                "description": "Per 1M tokens"
+              }
+            ],
+            "founder": {
+              "name": "Liang Wenfeng",
+              "mail": "contact@deepseek.com"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/9d823c04-85e6-4010-a80e-52c793e0e20b.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/d79cec1a-4838-434a-906b-86df94e5f369.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/c4a621a1-efe7-429e-a2c6-84139933e358.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/516f4970-7fb7-41a1-a594-f3fd951db674.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/b7e19ebc-253e-4cb0-a66e-4f7aa9a54b43.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "89",
+                    "name": "Open Source"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "272",
+                    "name": "GitHub"
+                  }
+                }
+              ]
+            },
+            "votesCount": 11
+          }
+        },
+        {
+          "node": {
+            "id": "1043096",
+            "name": "Pullse",
+            "tagline": "The execution-first support platform. Humans + AI together.",
+            "description": "### Details\nPullse is redefining the customer support landscape by shifting the focus from passive ticketing to active execution. It is built on the philosophy that modern support requires a seamless blend of human empathy and AI efficiency. The platform utilizes Agentic Chatbots to autonomously resolve standard L1 and L2 inquiries without human intervention, freeing up support agents to handle complex L3 issues. With AI Copilots assisting agents in real-time, Pullse ensures that every ticket is handled with maximum speed and accuracy, supported by built-in quality assurance.\n\n### Features\n* **Agentic Chatbots:** Autonomous AI agents that handle and resolve routine L1/L2 tickets independently.\n* **AI Copilots:** Real-time assistants that empower human agents with context and suggestions for complex issues.\n* **Unified Inbox:** A single interface to manage all customer interactions across various channels.\n* **Auto QA:** Built-in automated quality assurance to maintain high standards of support execution.",
+            "website": "https://www.producthunt.com/r/AEA3R2TGKAZH6X?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Text"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Growth",
+                "pricing in usd": "49",
+                "description": "Includes 1 agent seat + AI copilot"
+              },
+              {
+                "plan-type": "Scale",
+                "pricing in usd": "99",
+                "description": "Unlimited tickets & API integrations"
+              }
+            ],
+            "founder": {
+              "name": "Pullse Team",
+              "mail": "hello@pullse.ai"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/ea71b72f-951b-4b0c-bc0d-4a7ab1970a9c.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/f0bef925-cbde-427a-80f3-4bf156924220.jpeg?auto=format",
+                "type": "video"
+              },
+              {
+                "url": "https://ph-files.imgix.net/18f9f82a-27ac-47eb-9c2a-b55bfbf3b439.webp?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/8371fde8-c5b7-42b1-aad7-690ef77bfbf6.webp?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/0d5e9345-dc6b-48b7-aeeb-eb4a0c18a242.webp?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/c6c23896-3bef-4dff-8b13-1955e258112a.webp?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "123",
+                    "name": "Customer Communication"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "237",
+                    "name": "SaaS"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 6
+          }
+        },
+        {
+          "node": {
+            "id": "1042718",
+            "name": "MYNX",
+            "tagline": "One Interface. Every AI Model - New brand image",
+            "description": "### Details\nMYNX is the ultimate aggregator for artificial intelligence, designed to streamline your workflow by bringing every major AI model into a single, unified interface. Instead of juggling multiple tabs and subscriptions to access different LLMs, MYNX allows you to interact with all of them simultaneously from one dashboard. This centralized approach enables users to compare outputs, leverage the strengths of different models for specific tasks, and access premium tools like GPT-4 and Claude without friction. It is the ideal solution for power users who need versatility and efficiency in their AI interactions.\n\n### Features\n* **Unified Interface:** Access all major AI models from a single, clean dashboard.\n* **Multi-Model Chat:** Interact with different models simultaneously to compare results.\n* **Premium Access:** (Pro Plan) Get unified access to top-tier models like GPT-4 and Claude.\n* **Free Tier:** Includes access to a wide range of open models at no cost.",
+            "website": "https://www.producthunt.com/r/2ASMKBRKXVJCWY?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Text"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Basic",
+                "pricing in usd": "0",
+                "description": "Access to free open models"
+              },
+              {
+                "plan-type": "Pro",
+                "pricing in usd": "19",
+                "description": "Unified access to premium models (GPT-4, Claude)"
+              }
+            ],
+            "founder": {
+              "name": "MYNX Team",
+              "mail": "support@mynx.ai"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/b53702f3-df4f-4131-9e93-66e586a936db.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/e518340e-32e6-43db-aa5b-c02c1abcf2b8.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/868f6073-8398-4808-8daa-bbae84adf8f3.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/caac5781-ca3c-4b0d-88d9-885320e4c81e.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/e7a53414-8884-4ab8-9599-5609e567715b.jpeg?auto=format",
+                "type": "video"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "93",
+                    "name": "User Experience"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 6
+          }
+        },
+        {
+          "node": {
+            "id": "1043288",
+            "name": "Nemix",
+            "tagline": "Meme Marketing made Easy using AI",
+            "description": "### Details\nNemix is an AI-powered marketing tool that takes the guesswork out of viral content creation. It is designed to help indie hackers, agencies, and creators cut through the noise of social media by leveraging proven meme formats. Unlike standard design tools, Nemix tracks real-time social trends to identify what is currently working. It then automatically matches your core message with the best-fitting style, generating high-performing templates, captions, and variants. This allows you to test marketing ideas rapidly and gain reliable traction without needing to be a professional designer or meme expert.\n\n### Features\n* **Trend Tracking:** Monitors real-time social data to identify currently viral meme formats.\n* **Auto-Generation:** Automatically creates templates, captions, and variants based on your message.\n* **Rapid Testing:** Generate multiple variants quickly to test what resonates best with your audience.\n* **Cross-Platform:** Available as a mobile app for on-the-go creation and a SaaS web dashboard for agencies.",
+            "website": "https://www.producthunt.com/r/FZOOM6HEPWOKLO?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "Generate Image",
+              "For Design"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Mobile App",
+                "pricing in usd": "0.99",
+                "description": "One-time purchase (iOS/Android)"
+              },
+              {
+                "plan-type": "SaaS Pro",
+                "pricing in usd": "9",
+                "description": "Web dashboard for agencies"
+              }
+            ],
+            "founder": {
+              "name": "Game Space Labs",
+              "mail": "support@gamespacelabs.com"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/60c53e0a-a2da-4c42-b032-2db17d146351.webp?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/a36df29d-6510-4b13-914a-17fcd95b907a.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/caeecd4b-e047-4368-bbab-6bbf544cd371.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/722576bd-f84f-46f6-8b02-e293846315c0.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/ccecc7fe-3782-42c8-9f3c-db090347992b.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/19a3ebbf-f2b8-4811-8d45-7c51d977a2f1.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/f29ef0d7-7caa-469b-b515-fd8f951cb822.jpeg?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "206",
+                    "name": "Growth Hacking"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "784",
+                    "name": "Memes"
+                  }
+                }
+              ]
+            },
+            "votesCount": 6
+          }
+        },
+        {
+          "node": {
+            "id": "1043268",
+            "name": "RandomMockups - AI Mockup Generator",
+            "tagline": "Create professional device mockups for your SaaS and website",
+            "description": "### Details\nRandomMockups.com offers a streamlined, AI-powered solution for developers and designers who need high-quality device mockups without the hassle of complex design software. By simply uploading a screenshot of your application or website, the tool instantly generates a professional-grade mockup featuring your content on various devices. It is perfect for enhancing landing pages, marketing materials, and pitch decks. The platform offers a generous free tier for standard needs and a Pro tier for those requiring ultra-high-definition 4K visuals, ensuring your product always looks its best.\n\n### Features\n* **Instant Generation:** Upload a screenshot and get a unique mockup in seconds.\n* **AI-Powered:** Uses artificial intelligence to render realistic device context and lighting.\n* **4K Resolution:** (Pro Tier) Unlocks stunning high-definition downloads suitable for print and large displays.\n* **Watermark Free:** (Pro Tier) Provides clean, professional images ready for commercial use.",
+            "website": "https://www.producthunt.com/r/BBF5HQWMEBK34C?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Design",
+              "Generate Image"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Free",
+                "pricing in usd": "0",
+                "description": "Standard resolution with watermark"
+              },
+              {
+                "plan-type": "Pro",
+                "pricing in usd": "9",
+                "description": "4K resolution, no watermarks"
+              }
+            ],
+            "founder": {
+              "name": "RandomMockups Team",
+              "mail": "hello@randommockups.com"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/bd56ee40-1bdd-4476-b200-5212d142dc24.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/f6040913-1d20-4542-820e-bcd0110e2135.jpeg?auto=format",
+                "type": "video"
+              },
+              {
+                "url": "https://ph-files.imgix.net/2dc46d58-ab6b-47a1-99c5-50f03dbee155.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/3fc4d8e0-8058-4e2a-8507-9eb945e2582c.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/eac43bb6-315b-4f18-b20f-569aeb9391f7.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/4f0624f6-f4cb-4af6-bb91-f20408ebe4ec.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/41645ddd-bbab-478b-a48b-d9b2eb9b7307.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/ecc3f7b0-03f0-4fff-a8a3-dea7f8651755.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "44",
+                    "name": "Design Tools"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 3
+          }
+        },
+        {
+          "node": {
+            "id": "1043420",
+            "name": "VeriIA",
+            "tagline": "Detector de ia para contenido profesional",
+            "description": "### Details\nVeriIA es una herramienta esencial para la integridad del contenido en la era digital, diseñada para detectar texto generado por inteligencia artificial en entornos profesionales. Su tecnología avanzada permite analizar informes, artículos y documentos completos para verificar la autoría humana. Al escanear el texto, VeriIA no solo entrega un veredicto, sino que resalta frases clave y patrones específicos que sugieren la intervención de una IA. Esta transparencia es vital para editores, especialistas en SEO y académicos que necesitan garantizar la autenticidad de su trabajo. Disponible tanto para verificaciones rápidas gratuitas como para análisis ilimitados profesionales.\n\n### Features\n* **Análisis Profundo:** Examina la estructura y sintaxis del texto para identificar patrones de IA.\n* **Resaltado Inteligente:** Marca frases específicas sospechosas para una revisión detallada.\n* **Enfoque Profesional:** Diseñado para validar informes, artículos SEO y documentos académicos.\n* **Acceso Flexible:** Plan gratuito para uso diario ligero y opción Pro para análisis de texto ilimitado.",
+            "website": "https://www.producthunt.com/r/YIKSIQI2CQFENC?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Writing"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Free",
+                "pricing in usd": "0",
+                "description": "3 checks per day"
+              },
+              {
+                "plan-type": "Pro",
+                "pricing in usd": "15",
+                "description": "Unlimited text analysis"
+              }
+            ],
+            "founder": {
+              "name": "VeriIA Team",
+              "mail": "contacto@veriia.com"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/104576e5-2439-4183-919e-8f60593e6243.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/d2e22d72-a6ac-4bc9-8f78-7c5bd964750d.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "90",
+                    "name": "Writing"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "231",
+                    "name": "SEO"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 3
+          }
+        },
+        {
+          "node": {
+            "id": "1043350",
+            "name": "The Journal of AI Slop",
+            "tagline": "AI Slop \"Research\" papers, peer-reviewed by LLM",
+            "description": "### Details\nThe Journal of AI Slop™ is a brilliantly satirical project that holds a mirror up to the current state of AI in academia. It functions as a peer-reviewed publication with a twist: all submissions must be authored or co-authored by a Large Language Model (LLM), and the peer review board consists entirely of inconsistently rotating AI bots. This project captures the cultural zeitgeist with humor, exploring the absurdity of AI-generated content and the fight for publishing rights between humans and machines. It invites the community to participate in this playful experiment, creating a dialogue about the nature of authorship in the AI age.\n\n### Features\n* **Satirical Concept:** A humorous take on academic publishing where LLMs are the stars.\n* **AI Peer Review:** Papers are reviewed and accepted (or rejected) by AI bots.\n* **Open Submission:** Anyone can submit papers, provided an LLM is a co-author.\n* **Cultural Commentary:** Serve as an artistic and comedic reflection on the proliferation of AI content.",
+            "website": "https://www.producthunt.com/r/5HR37TI3M56LI7?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Writing"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Free",
+                "pricing in usd": "0",
+                "description": "Free to read and submit"
+              }
+            ],
+            "founder": {
+              "name": "The Editor",
+              "mail": "editor@journalofaislop.com"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/9f13682d-963d-4589-bd67-3a00ec95a89f.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/bff90239-32bd-4427-982f-7405433717a0.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/7c7577e9-811e-4cee-9b8e-1c652186d29e.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/2be60f8f-7e5b-45de-ba16-e0f293ea6c07.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/cb50363e-a4ec-4211-9e42-9d71785a3310.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/57f3e4da-ddc6-49e6-94af-671ac060a8b3.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "204",
+                    "name": "Education"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "272",
+                    "name": "GitHub"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "748",
+                    "name": "Comedy"
+                  }
+                }
+              ]
+            },
+            "votesCount": 3
+          }
+        },
+        {
+          "node": {
+            "id": "1042914",
+            "name": "UnitHub",
+            "tagline": "AI property management for landlords. Free for 3 units.",
+            "description": "### Details\nUnitHub is a comprehensive AI-powered property management platform designed to put landlord operations on autopilot. Tailored for those managing between 1 and 50 properties, it automates the most time-consuming aspects of rental management. From intelligent tenant screening that assigns risk grades to automated rent collection and late fee calculations, UnitHub handles the details so you don't have to. It even simplifies maintenance with vendor tracking and streamlines administrative tasks like lease signing and tax reporting. With a generous free tier for small portfolios, it's the smartest way to professionalize your rental business without high costs.\n\n### Features\n* **AI Tenant Screening:** Automatically screens tenants and assigns A-F risk grades for safer leasing.\n* **Automated Finances:** Handles rent reminders, late fee calculations, and generates tax-ready Schedule E reports.\n* **Maintenance Tracking:** Centralizes maintenance requests and vendor management in one dashboard.\n* **Integrated Communication:** Syncs with Gmail for seamless communication logs and offers e-signatures for documents.",
+            "website": "https://www.producthunt.com/r/VIIQU66JGP7DLL?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Free",
+                "pricing in usd": "0",
+                "description": "Free for up to 3 properties"
+              },
+              {
+                "plan-type": "Landlord Pro",
+                "pricing in usd": "15",
+                "description": "Per unit/month for 4+ properties"
+              }
+            ],
+            "founder": {
+              "name": "UnitHub Team",
+              "mail": "hello@unithub.com"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/9aa60d3f-493f-4448-b21d-235dd3246e01.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/e3adf1ab-9e8f-44e8-9ff9-2f2f2659defd.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/a402ded9-b6f8-4fb2-a5cd-cbea87ab6d6a.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/7b5c327a-97a0-423a-a73c-78e612b5fdb7.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/c98fc321-97d8-40ac-b16c-e36449f80181.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/23039d81-9d40-4501-9c0c-4255b8b54215.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/9b52ec51-9f75-48b3-a79a-3b8f79c59008.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/8043f1d3-6c5e-4f42-a436-a14369b7b5e2.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/a7d48675-ec65-4cf0-a5c4-3feff6285d08.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/4aa490f7-5ff6-470b-83e5-aa5c27207772.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/df8b68e1-950e-469c-9e22-55b800ceb4b0.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/8066469d-9bfd-4082-ad4e-61c1e096f247.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/38823ea3-df70-44fa-b571-6bd88bdd7130.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/ebba3a4e-47d0-4b15-bfd7-725f62cbb83f.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/cd96d9d1-8f68-407d-80af-aede9b287151.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/090ac964-013e-42b4-9d69-fe4b5ae782a2.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/49442afb-92c7-4d07-a764-5d0de13b2b3e.jpeg?auto=format",
+                "type": "video"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "46",
+                    "name": "Productivity"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "237",
+                    "name": "SaaS"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 2
+          }
+        },
+        {
+          "node": {
+            "id": "1043377",
+            "name": "Navica - AI Travel Planner",
+            "tagline": "Plan smarter trips with AI that knows what guidebooks don't",
+            "description": "### Details\nNavica is an intelligent AI travel planner that transforms the chaotic process of trip planning into a streamlined, personalized experience. It goes far beyond generic guidebooks by generating deeply customized itineraries in minutes based on your specific travel style—whether you are an adventure seeker, a foodie, or a culture buff. Navica provides insider tips, uncovers hidden gems, and builds budget-optimized day-by-day plans ranging from 1 to 14 days. With real-time streaming generation, you can watch your perfect trip come together instantly, complete with smart transport recommendations and cost breakdowns.\n\n### Features\n* **Hyper-Personalization:** Tailors every part of the itinerary to your specific interests and travel style.\n* **Smart Logistics:** Automatically includes transport recommendations and optimizes daily routes.\n* **Budget Optimization:** Provides clear cost breakdowns to keep your trip within budget.\n* **Real-Time Generation:** Watch your itinerary build itself live, with options to export for offline use.",
+            "website": "https://www.producthunt.com/r/FVMYCXZ5EJDXNI?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Text"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Free",
+                "pricing in usd": "0",
+                "description": "5 itinerary plans/month"
+              },
+              {
+                "plan-type": "Premium",
+                "pricing in usd": "12",
+                "description": "Unlimited planning & export"
+              }
+            ],
+            "founder": {
+              "name": "Navica Team",
+              "mail": "support@navica.ai"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/4be49875-9101-4320-ad3b-8bb2661be820.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/35566db2-b2d8-4e3e-a859-27e8d93ecb2d.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/40866334-c714-46f0-9e90-6bc40dfd7366.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/84e5446d-a16d-4fe7-b609-b8d6574c620e.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/5a7baa0d-99ab-4657-bf6a-04adfd206f05.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/67798f8a-cd14-43f2-9552-45ef3420224c.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/4cbb5b16-a97f-4e77-98ea-7a4242a2db42.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/ceff3672-0302-40e0-8abb-5478d08395cf.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/1a670be4-4be6-47cd-a67a-e747a4a91096.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/e7b506e2-c69a-451c-a37b-857744c72a3b.jpeg?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/e681fd33-5e36-4208-95d6-be8bb4d05db8.jpeg?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "46",
+                    "name": "Productivity"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "250",
+                    "name": "Travel"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 2
+          }
+        },
+        {
+          "node": {
+            "id": "1043243",
+            "name": "Samudra Sahayak",
+            "tagline": "Smart fishing AI assistant for World fishermen",
+            "description": "### Details\nSamudra Sahayak is a vital technological advancement designed to empower coastal fishermen in India and beyond. It serves as a smart AI assistant that focuses on two critical areas: safety and productivity. The platform provides real-time, localized data including weather alerts and safety notifications to protect fishermen at sea. Simultaneously, it uses advanced analytics to predict potential fishing zones, helping fishermen optimize their routes and increase their catch. With an integrated AI chatbot for instant guidance, Samudra Sahayak is modernizing the fishing industry and securing livelihoods through technology.\n\n### Features\n* **Safety Alerts:** Real-time weather updates and danger notifications to ensure fisherman safety.\n* **Fishing Zone Prediction:** (Premium) Advanced GPS analytics to identify high-yield fishing zones.\n* **AI Chatbot:** Instant, accessible support and guidance via a user-friendly chat interface.\n* **Navigation Support:** Precise GPS navigation tools tailored for coastal fishing needs.",
+            "website": "https://www.producthunt.com/r/23ZZBY2HF6C3EK?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Text"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Basic",
+                "pricing in usd": "0",
+                "description": "Weather alerts & safety notifications"
+              },
+              {
+                "plan-type": "Premium",
+                "pricing in usd": "5",
+                "description": "Advanced GPS fishing zones"
+              }
+            ],
+            "founder": {
+              "name": "Novatra Industries LLP",
+              "mail": "support@samudrasahayak.co.in"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/73d92fed-429c-4cbe-a58d-5bfd170e30ce.jpeg?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/431ffbdf-e508-4eeb-b9b7-b79681c81b8c.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/4f02fc66-0aa5-4064-932b-3bf9df987ba4.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/86e3aa4b-66da-4682-9d6e-30ad6a760ed7.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "349",
+                    "name": "Climate Tech"
+                  }
+                }
+              ]
+            },
+            "votesCount": 2
+          }
+        },
+        {
+          "node": {
+            "id": "1042729",
+            "name": "Neartale",
+            "tagline": "AI research papers as memes",
+            "description": "### Details\nNeartale is an innovative educational platform that democratizes AI literacy by transforming dense, complex research papers into engaging memes. Recognizing that foundational papers like \"Attention Is All You Need\" are often inaccessible to the general public due to academic jargon, Neartale breaks them down into visual, easily digestible formats. It covers the history of AI from AlexNet to modern GPT models, making learning fun and accessible. The platform reinforces this knowledge with interactive quizzes and empowers users to create their own educational memes, effectively removing the gatekeeping around advanced AI concepts.\n\n### Features\n* **Visual Learning:** Converts complex academic papers into easy-to-understand memes.\n* **Interactive Quizzes:** Reinforces learning and retention through gamified testing.\n* **Creation Tools:** Allows users to generate their own memes to explain concepts to others.\n* **Comprehensive Library:** Covers a wide range of foundational papers, from early CNNs to modern Transformers.",
+            "website": "https://www.producthunt.com/r/B7JYRPUWYLTX2A?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Design",
+              "For Text"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Free",
+                "pricing in usd": "0",
+                "description": "Free access to meme library"
+              },
+              {
+                "plan-type": "Supporter",
+                "pricing in usd": "5",
+                "description": "Remove ads & support creators"
+              }
+            ],
+            "founder": {
+              "name": "Neartale Team",
+              "mail": "hello@neartale.com"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/883d1dfc-3b40-44ce-b26a-d432a7d3ea3d.jpeg?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/6a870404-cb22-4c2a-b892-b887c1f3112c.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/de282d96-402c-4fe5-9d7b-cd8a0c5d2f83.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/272f17f2-1cc9-4046-9524-051241738a71.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "204",
+                    "name": "Education"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "784",
+                    "name": "Memes"
+                  }
+                }
+              ]
+            },
+            "votesCount": 2
+          }
+        },
+        {
+          "node": {
+            "id": "1043379",
+            "name": "Prophex",
+            "tagline": "Trade outcomes, train intelligence",
+            "description": "### Details\nProphex is a sophisticated platform for perpetual prediction markets, designed to bring the dynamics of financial trading to outcome forecasting. Unlike traditional betting which locks you into fixed positions, Prophex allows users to trade on outcomes with real leverage and dynamic pricing, similar to financial futures. This creates a fluid market environment where users can capitalize on shifting probabilities and train their own market intelligence. The platform operates with a transparent model, charging a transaction fee on executions rather than hiding costs in spreads, making it a serious tool for prediction traders.\n\n### Features\n* **Perpetual Markets:** Trade on outcomes continuously with dynamic pricing, not fixed odds.\n* **Real Leverage:** Utilize leverage to maximize potential returns on high-confidence predictions.\n* **Fluid Trading:** Enter and exit positions flexibly, similar to trading financial futures.\n* **Transparent Fees:** A clear transaction fee model ensures fair trading conditions for all users.",
+            "website": "https://www.producthunt.com/r/MFSLUWVBK24NLM?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Transaction Fee",
+                "pricing in usd": "1%",
+                "description": "Fee per trade execution"
+              }
+            ],
+            "founder": {
+              "name": "Prophex Team",
+              "mail": "info@prophex.ai"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/56e51d33-ec4b-4033-b0e4-dc9abcd02d41.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/7a1ae4b8-164d-453c-a611-f0237f6405dd.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/c60e213e-9209-4666-8b8c-1b88718fbc9a.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/1cb7ad51-f7ca-4343-8841-f0de787379f2.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/679c9b51-ab4b-4ef3-9a2d-cc1e3e360f4f.jpeg?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 2
+          }
+        },
+        {
+          "node": {
+            "id": "1043397",
+            "name": "MommaGrapes",
+            "tagline": "Feel confident in every feed, nap, and milestone.",
+            "description": "### Details\nMommaGrapes is an all-in-one AI-powered baby tracking companion that goes beyond simple data logging to provide parents with actionable confidence. Through an intuitive AI Chat interface, parents can instantly log feeds, sleep patterns, diaper changes, and developmental milestones without navigating complex menus. The platform visualizes this data in a smart daily dashboard and WHO growth charts, offering real-time insights and explanations. It also includes specialized features like power pumping guidance and reminders, ensuring parents have the clarity and support they need during the critical early stages of child-rearing.\n\n### Features\n* **AI Chat Logging:** Instantly log activities via natural language chat instead of manual entry.\n* **Smart Dashboard:** Visualizes daily patterns and health metrics for quick at-a-glance updates.\n* **Growth Tracking:** Includes WHO growth charts to monitor your baby's development against standards.\n* **Specialized Guidance:** Offers tailored support for power pumping and developmental milestones.",
+            "website": "https://www.producthunt.com/r/U7TFAZB3HASDMF?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+test+%28ID%3A+249689%29",
+            "type": [
+              "For Text"
+            ],
+            "createdAt": "2025-11-28T08:01:00Z",
+            "pricing": [
+              {
+                "plan-type": "Free",
+                "pricing in usd": "0",
+                "description": "Basic tracking & logs"
+              },
+              {
+                "plan-type": "Momma+ Premium",
+                "pricing in usd": "9",
+                "description": "Advanced AI insights & growth charts"
+              }
+            ],
+            "founder": {
+              "name": "MommaGrapes Team",
+              "mail": "hello@mommagrapes.com"
+            },
+            "thumbnail": {
+              "url": "https://ph-files.imgix.net/428e39f0-c232-4784-bc51-e608bb7da14d.png?auto=format"
+            },
+            "media": [
+              {
+                "url": "https://ph-files.imgix.net/b54c4112-394b-42ec-b100-ec847f7e448f.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/a7a090c3-71a5-4914-87b5-d58ea79a0676.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/b25b893a-156b-4bbe-94e9-91f6341f8d88.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/a0a0c0c6-091e-46ab-a360-995cedfc3f3e.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/e84d7ee6-6f9d-495d-afb5-3b478cd3c215.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/a3e92e26-edcd-498b-9841-8f346cca1faa.png?auto=format",
+                "type": "image"
+              },
+              {
+                "url": "https://ph-files.imgix.net/50b142fa-8c79-450e-8e52-d03f663f7d21.png?auto=format",
+                "type": "image"
+              }
+            ],
+            "topics": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "43",
+                    "name": "Health & Fitness"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "82",
+                    "name": "Parenting"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "268",
+                    "name": "Artificial Intelligence"
+                  }
+                }
+              ]
+            },
+            "votesCount": 2
+          }
+        }
+      ]
+    }
+  }
+}

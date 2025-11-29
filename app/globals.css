@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark mode (default) */
+  --background: #0a0a0a;
+  --foreground: #f9fafb;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-tertiary: #6b7280;
+
+  /* Black Palette */
+  --black: #000000;
+  --black-100: #0a0a0a;
+  --black-200: #1a1a1a;
+  --black-300: #2a2a2a;
+  --black-400: #3a3a3a;
+  --black-500: #4a4a4a;
+  --black-600: #5a5a5a;
+  --black-700: #6a6a6a;
+  --black-800: #8a8a8a;
+  --black-900: #aaaaaa;
+
+  /* Blue Palette */
+  --blue: #2563eb;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+
+  /* Success/Error Colors */
+  --success: #10b981;
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --success-border: #065f46;
+  --error: #ef4444;
+}
+
+/* Light mode colors */
+:root:not(.dark) {
+  --background: #ffffff;
+  --foreground: #000000;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --text-tertiary: #4b5563;
+
+  /* Light mode overrides - white backgrounds for cards */
+  --black: #ffffff;
+  --black-100: #ffffff;
+  --black-200: #ffffff;
+  --black-300: #f9fafb;
+  --black-400: #f3f4f6;
+  --black-500: #e5e7eb;
+  --black-600: #d1d5db;
+  --black-700: #9ca3af;
+  --black-800: #6b7280;
+  --black-900: #4b5563;
+
+  /* Blue stays consistent */
+  --blue: #2563eb;
+  --blue-100: #eff6ff;
+  --blue-200: #dbeafe;
+  --blue-300: #bfdbfe;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #93c5fd;
+  --blue-900: #dbeafe;
+
+  /* Success/Error Colors for light mode */
+  --success: #059669;
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --success-border: #10b981;
+}
+
+/* Dark mode explicit */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f9fafb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Custom theme colors */
+  --color-black: var(--black);
+  --color-blue: var(--blue);
+  --color-white: var(--white);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #f9fafb;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar globally */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
