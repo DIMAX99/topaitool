@@ -67,47 +67,47 @@ export function ToolEngagement({ votesCount, website, pricing }: ToolEngagementP
   ];
 
   return (
-    <section className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-2xl p-6 border border-[var(--blue-800)] shadow-xl shadow-[var(--blue-600)]/10">
-      {/* Section 1: Votes & Rating */}
-      <div className="flex items-center justify-center gap-12 mb-8 pb-8 border-b border-[var(--blue-800)]">
-        {/* Upvote Button */}
+    <section className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-2xl p-3 sm:p-4 md:p-6 border border-[var(--blue-800)] shadow-xl shadow-[var(--blue-600)]/10">
+      {/* Section 1: Votes & Rating - Responsive */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-12 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-[var(--blue-800)]">
+        {/* Upvote Button - Responsive */}
         <button
           onClick={handleUpvote}
           disabled={hasUpvoted}
-          className={`flex flex-col items-center justify-center px-12 py-8 rounded-xl transition-all duration-200 ${
+          className={`flex flex-col items-center justify-center px-8 sm:px-10 md:px-12 py-6 sm:py-7 md:py-8 rounded-xl transition-all duration-200 w-full sm:w-auto ${
             hasUpvoted
               ? "bg-[var(--blue-600)] text-white cursor-not-allowed"
               : "bg-[var(--black-300)] hover:bg-[var(--blue-600)] text-[var(--text-primary)] hover:text-white"
           } border-2 border-[var(--blue-700)] shadow-lg`}
         >
-          <svg className="w-10 h-10 mb-2" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 mb-2" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
           </svg>
-          <span className="text-3xl font-bold">{localVotes}</span>
-          <span className="text-sm uppercase mt-1">Upvotes</span>
+          <span className="text-2xl sm:text-3xl font-bold">{localVotes}</span>
+          <span className="text-xs sm:text-sm uppercase mt-1">Upvotes</span>
         </button>
 
-        {/* Rating Graph */}
-        <div>
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-base font-semibold text-[var(--blue-600)]">Overall Rating</span>
-            <span className="text-3xl font-bold text-[var(--blue-600)]">{rating}</span>
+        {/* Rating Graph - Responsive */}
+        <div className="w-full sm:w-auto">
+          <div className="flex items-center justify-between mb-2 sm:mb-3">
+            <span className="text-sm sm:text-base font-semibold text-[var(--blue-600)]">Overall Rating</span>
+            <span className="text-2xl sm:text-3xl font-bold text-[var(--blue-600)]">{rating}</span>
           </div>
           
-          <div className="relative w-40 h-40 mx-auto">
+          <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto">
             <svg className="w-full h-full transform -rotate-90">
               <circle
-                cx="80"
-                cy="80"
-                r="70"
+                cx="50%"
+                cy="50%"
+                r="45%"
                 stroke="var(--black-400)"
                 strokeWidth="10"
                 fill="none"
               />
               <circle
-                cx="80"
-                cy="80"
-                r="70"
+                cx="50%"
+                cy="50%"
+                r="45%"
                 stroke="var(--blue-500)"
                 strokeWidth="10"
                 fill="none"
@@ -118,29 +118,29 @@ export function ToolEngagement({ votesCount, website, pricing }: ToolEngagementP
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-4xl font-bold text-[var(--blue-600)]">{rating}</span>
-              <span className="text-sm text-[var(--text-primary)]">out of 5</span>
+              <span className="text-3xl sm:text-4xl font-bold text-[var(--blue-600)]">{rating}</span>
+              <span className="text-xs sm:text-sm text-[var(--text-primary)]">out of 5</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Section 2: Discussions */}
+      {/* Section 2: Discussions - Responsive */}
       <div>
-        {/* Header with Sort Filter */}
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-xl font-bold text-[var(--blue-600)] flex items-center gap-2">
-            <svg className="w-6 h-6 text-[var(--blue-400)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        {/* Header with Sort Filter - Responsive */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-4 sm:mb-6">
+          <h3 className="text-lg sm:text-xl font-bold text-[var(--blue-600)] flex items-center gap-2">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--blue-400)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
-            Discussions ({Math.floor(votesCount / 3)})
+            <span className="text-base sm:text-xl">Discussions ({Math.floor(votesCount / 3)})</span>
           </h3>
 
-          {/* Sort Filter */}
-          <div className="flex gap-2">
+          {/* Sort Filter - Responsive */}
+          <div className="flex gap-2 w-full sm:w-auto">
             <button
               onClick={() => setDiscussionFilter("latest")}
-              className={`px-3 py-1.5 rounded-lg font-medium text-xs transition-all ${
+              className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg font-medium text-xs transition-all ${
                 discussionFilter === "latest"
                   ? "bg-[var(--blue-600)] text-white shadow-md"
                   : "bg-[var(--black-300)] text-[var(--text-primary)] hover:bg-[var(--black-400)] border border-[var(--blue-800)]"
@@ -150,7 +150,7 @@ export function ToolEngagement({ votesCount, website, pricing }: ToolEngagementP
             </button>
             <button
               onClick={() => setDiscussionFilter("top")}
-              className={`px-3 py-1.5 rounded-lg font-medium text-xs transition-all ${
+              className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg font-medium text-xs transition-all ${
                 discussionFilter === "top"
                   ? "bg-[var(--blue-600)] text-white shadow-md"
                   : "bg-[var(--black-300)] text-[var(--text-primary)] hover:bg-[var(--black-400)] border border-[var(--blue-800)]"
@@ -160,7 +160,7 @@ export function ToolEngagement({ votesCount, website, pricing }: ToolEngagementP
             </button>
             <button
               onClick={() => setDiscussionFilter("worst")}
-              className={`px-3 py-1.5 rounded-lg font-medium text-xs transition-all ${
+              className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg font-medium text-xs transition-all ${
                 discussionFilter === "worst"
                   ? "bg-[var(--blue-600)] text-white shadow-md"
                   : "bg-[var(--black-300)] text-[var(--text-primary)] hover:bg-[var(--black-400)] border border-[var(--blue-800)]"

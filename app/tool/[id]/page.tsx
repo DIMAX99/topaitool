@@ -33,7 +33,6 @@ export default function ToolPage({ params }: ToolPageProps) {
         viewedAt: Date.now()
       };
 
-      // Dispatch custom event
       const event = new CustomEvent("toolViewed", { detail: viewedTool });
       window.dispatchEvent(event);
     }
@@ -41,19 +40,19 @@ export default function ToolPage({ params }: ToolPageProps) {
 
   return (
     <div className="relative z-10 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* Back Button */}
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-8">
+        {/* Back Button - Responsive */}
         <button
           onClick={() => router.back()}
-          className="mb-6 flex items-center gap-2 text-(--blue-400) hover:text-(--blue-300) transition-colors group"
+          className="mb-4 sm:mb-6 flex items-center gap-2 text-[var(--blue-400)] hover:text-[var(--blue-300)] transition-colors group"
         >
-          <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
-          <span className="text-sm font-medium">Back to tools</span>
+          <span className="text-xs sm:text-sm font-medium">Back to tools</span>
         </button>
 
-        {/* Tool Hero Section with Engagement */}
+        {/* Tool Hero Section with Alternatives */}
         <ToolHero
           name={node.name}
           tagline={node.tagline}

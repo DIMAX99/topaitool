@@ -2,6 +2,7 @@
 import { ToolMedia } from "@/components/tool-media";
 import { ToolDetails } from "@/components/tool-details";
 import { ToolEngagement } from "@/components/tool-engagement";
+import { ToolAlternatives } from "@/components/tool-alternatives";
 
 interface ToolHeroProps {
   name: string;
@@ -42,6 +43,9 @@ export function ToolHero({
   pricing,
   verified = false,
 }: ToolHeroProps) {
+  // Extract category names for alternatives
+  const categories = topics.edges.map((topic) => topic.node.name);
+
   return (
     <>
       <section className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-2xl p-6 border border-[var(--blue-800)] shadow-xl shadow-[var(--blue-600)]/10 mb-6 relative">
@@ -139,10 +143,18 @@ export function ToolHero({
       </div>
 
       {/* Tool Engagement Section */}
-      <ToolEngagement
-        votesCount={votesCount}
-        website={website}
-        pricing={pricing}
+      <div className="mb-6">
+        <ToolEngagement
+          votesCount={votesCount}
+          website={website}
+          pricing={pricing}
+        />
+      </div>
+
+      {/* Alternatives Section */}
+      <ToolAlternatives
+        currentToolId={topics.edges[0]?.node.id || ""}
+        categories={categories}
       />
     </>
   );

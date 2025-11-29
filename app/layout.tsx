@@ -68,11 +68,13 @@ export default function RootLayout({
           {/* Sidebar with theme toggle */}
           <Sidebar />
 
-          {/* Right Sidebar */}
-          <RightSidebar />
+          {/* Right Sidebar - Hidden below xl (1280px) */}
+          <div className="hidden xl:block">
+            <RightSidebar />
+          </div>
 
-          {/* Main Content Area with proper margins for sidebars */}
-          <main className="ml-16 mr-72 pt-[60px]">
+          {/* Main Content Area - Responsive margins */}
+          <main className="ml-16 xl:mr-72 mr-0 pt-[60px]">
             {children}
           </main>
         </ThemeContext.Provider>

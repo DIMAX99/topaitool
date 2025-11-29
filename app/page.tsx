@@ -108,22 +108,31 @@ export default function Home() {
 
     switch (activeView) {
       case "top-free":
-        baseTools = data2.data.posts.edges.filter((edge) =>
-          edge.node.pricing.some((p) =>
-            p["pricing in usd"] === "0" || p["plan-type"].toLowerCase().includes("free")
-          )
-        );
+        // Only show tools that have at least one completely free plan (pricing = "0")
+        baseTools = data2.data.posts.edges.filter((edge) => {
+          // Check if ANY plan is completely free
+          const hasFreePlan = edge.node.pricing.some((p) => p["pricing in usd"] === "0");
+          return hasFreePlan;
+        });
         baseTools = applySearchFilter(baseTools);
         return baseTools.sort((a, b) => b.node.votesCount - a.node.votesCount);
       
       case "top-paid":
-        baseTools = data2.data.posts.edges.filter((edge) =>
-          edge.node.pricing.some((p) =>
-            p["pricing in usd"] !== "0" &&
-            p["pricing in usd"] !== "Custom" &&
-            !p["plan-type"].toLowerCase().includes("free")
-          )
-        );
+        // Only show tools where ALL plans are paid (no free options)
+        baseTools = data2.data.posts.edges.filter((edge) => {
+          // Check if EVERY plan costs money (no "0" pricing)
+          const allPlansPaid = edge.node.pricing.every((p) => {
+            const price = p["pricing in usd"];
+            // Exclude tools with free plans
+            return price !== "0" && price !== "Custom";
+          });
+          // Additional check: at least one plan must have a valid paid price
+          const hasPaidPlan = edge.node.pricing.some((p) => {
+            const price = p["pricing in usd"];
+            return price !== "0" && price !== "Custom" && !isNaN(parseFloat(price));
+          });
+          return allPlansPaid && hasPaidPlan;
+        });
         baseTools = applySearchFilter(baseTools);
         return baseTools.sort((a, b) => b.node.votesCount - a.node.votesCount);
       
@@ -174,19 +183,19 @@ export default function Home() {
       />
 
       {/* Page Content */}
-      <div className="flex flex-col items-center justify-start px-4 py-8">
-        {/* Search Bar with Filter Button */}
-        <div className="w-full max-w-2xl mb-8 flex gap-3">
-          <div className="flex-1 relative">
+      <div className="flex flex-col items-center justify-start px-2 sm:px-4 py-4 sm:py-8">
+        {/* Search Bar with Filter Button - Fully Responsive */}
+        <div className="w-full max-w-2xl mb-4 sm:mb-8 flex flex-col sm:flex-row gap-2 sm:gap-3">
+          <div className="flex-1 relative order-1 sm:order-1">
             <input
               type="text"
               placeholder="Search for tools..."
               value={searchQuery}
               onChange={handleSearchChange}
-              className="w-full px-6 py-4 pl-12 rounded-full bg-(--black-200)/90 backdrop-blur-md text-(--text-primary) placeholder-(--text-tertiary) border border-(--blue-800) focus:outline-none focus:ring-2 focus:ring-(--blue-500) transition-all"
+              className="w-full px-4 sm:px-6 py-3 sm:py-4 pl-10 sm:pl-12 pr-10 rounded-full bg-[var(--black-200)]/90 backdrop-blur-md text-[var(--text-primary)] placeholder-[var(--text-tertiary)] border border-[var(--blue-800)] focus:outline-none focus:ring-2 focus:ring-[var(--blue-500)] transition-all text-sm sm:text-base"
             />
             <svg 
-              className="w-5 h-5 text-(--text-tertiary) absolute left-4 top-1/2 -translate-y-1/2" 
+              className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--text-tertiary)] absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 pointer-events-none" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
@@ -199,74 +208,79 @@ export default function Home() {
                   setSearchQuery("");
                   setVisibleCount(6);
                 }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-(--text-tertiary) hover:text-(--text-primary) transition-colors"
+                className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors p-1"
+                aria-label="Clear search"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             )}
           </div>
+          
           <button
             onClick={() => setIsFilterOpen(true)}
-            className="px-6 py-4 rounded-full bg-(--blue-600) hover:bg-(--blue-700) text-white transition-colors flex items-center gap-2 font-semibold shadow-lg shadow-(--blue-600)/50"
+            className="px-4 sm:px-6 py-3 sm:py-4 rounded-full bg-[var(--blue-600)] hover:bg-[var(--blue-700)] text-white transition-colors flex items-center justify-center gap-2 font-semibold shadow-lg shadow-[var(--blue-600)]/50 text-sm sm:text-base whitespace-nowrap order-2 sm:order-2"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
             </svg>
-            Filter
+            <span className="hidden xs:inline sm:inline">Filter</span>
+            <span className="xs:hidden sm:hidden">Filters</span>
           </button>
         </div>
 
-        {/* Switch Button - 4 Options */}
-        <div className="flex items-center gap-2 mb-8 bg-(--black-200)/90 backdrop-blur-md rounded-full p-1 border border-(--blue-800)">
-          <button
-            onClick={() => handleViewChange("latest")}
-            className={`px-4 py-2 rounded-full font-semibold text-xs transition-all duration-200 ${
-              activeView === "latest"
-                ? "bg-(--blue-600) text-white shadow-lg shadow-(--blue-600)/50"
-                : "text-(--text-primary) hover:text-(--blue-400)"
-            }`}
-          >
-            Latest
-          </button>
-          <button
-            onClick={() => handleViewChange("top-free")}
-            className={`px-4 py-2 rounded-full font-semibold text-xs transition-all duration-200 ${
-              activeView === "top-free"
-                ? "bg-(--blue-600) text-white shadow-lg shadow-(--blue-600)/50"
-                : "text-(--text-primary) hover:text-(--blue-400)"
-            }`}
-          >
-            Top Free
-          </button>
-          <button
-            onClick={() => handleViewChange("top-paid")}
-            className={`px-4 py-2 rounded-full font-semibold text-xs transition-all duration-200 ${
-              activeView === "top-paid"
-                ? "bg-(--blue-600) text-white shadow-lg shadow-(--blue-600)/50"
-                : "text-(--text-primary) hover:text-(--blue-400)"
-            }`}
-          >
-            Top Paid
-          </button>
-          <button
-            onClick={() => handleViewChange("grossing")}
-            className={`px-4 py-2 rounded-full font-semibold text-xs transition-all duration-200 ${
-              activeView === "grossing"
-                ? "bg-(--blue-600) text-white shadow-lg shadow-(--blue-600)/50"
-                : "text-(--text-primary) hover:text-(--blue-400)"
-            }`}
-          >
-            Top Grossing
-          </button>
+        {/* Switch Button - Responsive with horizontal scroll on mobile */}
+        <div className="w-full max-w-4xl mb-4 sm:mb-8 overflow-x-auto scrollbar-hide px-2 sm:px-0">
+          <div className="flex items-center gap-1 sm:gap-2 bg-[var(--black-200)]/90 backdrop-blur-md rounded-full p-1 border border-[var(--blue-800)] min-w-max mx-auto w-fit">
+            <button
+              onClick={() => handleViewChange("latest")}
+              className={`px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 rounded-full font-semibold text-[10px] sm:text-xs md:text-sm transition-all duration-200 whitespace-nowrap ${
+                activeView === "latest"
+                  ? "bg-[var(--blue-600)] text-white shadow-lg shadow-[var(--blue-600)]/50"
+                  : "text-[var(--text-primary)] hover:text-[var(--blue-400)]"
+              }`}
+            >
+              Latest
+            </button>
+            <button
+              onClick={() => handleViewChange("top-free")}
+              className={`px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 rounded-full font-semibold text-[10px] sm:text-xs md:text-sm transition-all duration-200 whitespace-nowrap ${
+                activeView === "top-free"
+                  ? "bg-[var(--blue-600)] text-white shadow-lg shadow-[var(--blue-600)]/50"
+                  : "text-[var(--text-primary)] hover:text-[var(--blue-400)]"
+              }`}
+            >
+              Top Free
+            </button>
+            <button
+              onClick={() => handleViewChange("top-paid")}
+              className={`px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 rounded-full font-semibold text-[10px] sm:text-xs md:text-sm transition-all duration-200 whitespace-nowrap ${
+                activeView === "top-paid"
+                  ? "bg-[var(--blue-600)] text-white shadow-lg shadow-[var(--blue-600)]/50"
+                  : "text-[var(--text-primary)] hover:text-[var(--blue-400)]"
+              }`}
+            >
+              Top Paid
+            </button>
+            <button
+              onClick={() => handleViewChange("grossing")}
+              className={`px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 rounded-full font-semibold text-[10px] sm:text-xs md:text-sm transition-all duration-200 whitespace-nowrap ${
+                activeView === "grossing"
+                  ? "bg-[var(--blue-600)] text-white shadow-lg shadow-[var(--blue-600)]/50"
+                  : "text-[var(--text-primary)] hover:text-[var(--blue-400)]"
+              }`}
+            >
+              Top Grossing
+            </button>
+          </div>
         </div>
 
-        {/* Search Results Info - Works for all views */}
+        {/* Search Results Info - Responsive text size */}
         {searchQuery && (
-          <div className="w-full max-w-7xl mb-4 px-4 sm:px-8 lg:px-16">
-            <p className="text-sm text-(--text-primary)">
-              Found <span className="font-bold text-(--blue-600)">{allFilteredTools.length}</span> result{allFilteredTools.length !== 1 ? 's' : ''} for {searchQuery} in <span className="font-semibold text-(--blue-600)">{
+          <div className="w-full max-w-7xl mb-4 px-2 sm:px-4 lg:px-8 xl:px-16">
+            <p className="text-xs sm:text-sm text-[var(--text-primary)]">
+              Found <span className="font-bold text-[var(--blue-600)]">{allFilteredTools.length}</span> result{allFilteredTools.length !== 1 ? 's' : ''} for <span className="font-medium">{searchQuery}</span> in <span className="font-semibold text-[var(--blue-600)]">{
                 activeView === "top-free" ? "Top Free" :
                 activeView === "top-paid" ? "Top Paid" :
                 activeView === "grossing" ? "Top Grossing" :
@@ -276,9 +290,9 @@ export default function Home() {
           </div>
         )}
 
-        {/* Tools Grid */}
-        <section className="w-full px-4 sm:px-8 lg:px-16 max-w-7xl mb-20">
-          <h2 className="text-3xl font-bold text-(--blue-600) mb-8">
+        {/* Tools Grid - Responsive */}
+        <section className="w-full px-2 sm:px-4 lg:px-8 xl:px-16 max-w-7xl mb-20">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--blue-600)] mb-4 sm:mb-6 md:mb-8">
             {getViewTitle()}
           </h2>
           
