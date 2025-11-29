@@ -2,8 +2,7 @@
 
 A modern, feature-rich directory platform for discovering and exploring AI tools. Built with Next.js 14, TypeScript, and Tailwind CSS, featuring intelligent search, advanced filtering, and a beautiful dual-theme interface.
 
-![ToolFinder Platform](./public/screenshots/homepage.png)
-
+<img width="1917" height="958" alt="image" src="https://github.com/user-attachments/assets/fb80e885-e490-4e89-918a-89d10fc96e30" />
 ---
 
 ## 📋 Table of Contents
@@ -28,7 +27,6 @@ A modern, feature-rich directory platform for discovering and exploring AI tools
 - Instant results with search query highlighting
 - Clear search with a single click
 
-![Search Feature](./public/screenshots/search.png)
 
 ### 🎯 **Advanced Filtering**
 - **Price Range Slider**: Filter tools by pricing from $0 to $100+
@@ -38,15 +36,13 @@ A modern, feature-rich directory platform for discovering and exploring AI tools
   - Price (Low to High / High to Low)
   - Popularity (Most Votes)
 
-![Filter Dialog](./public/screenshots/filter.png)
+<img width="1918" height="958" alt="image" src="https://github.com/user-attachments/assets/f8063bb2-6fb3-4dd0-90d8-688f2694535e" />
 
 ### 📊 **Multiple View Modes**
 - **Latest**: Newest AI tools with full filter support
 - **Top Free**: Best free AI tools sorted by popularity
 - **Top Paid**: Premium tools with highest ratings
 - **Top Grossing**: Most popular tools by vote count
-
-![View Modes](./public/screenshots/views.png)
 
 ### 🕐 **View History Tracking**
 - Automatically tracks recently viewed AI tools
@@ -55,7 +51,8 @@ A modern, feature-rich directory platform for discovering and exploring AI tools
 - Quick access to previously explored tools
 - Clear history option
 
-![History Sidebar](./public/screenshots/history.png)
+<img width="281" height="449" alt="image" src="https://github.com/user-attachments/assets/40422f1c-609d-4f64-92ba-735680b61ce4" />
+
 
 ### 🛠️ **Dedicated Tool Pages**
 Each AI tool has a comprehensive detail page featuring:
@@ -70,7 +67,10 @@ Each AI tool has a comprehensive detail page featuring:
   - Discussion threads with Latest/Top/Worst filters
   - Comment system with AI avatars
 
-![Tool Detail Page](./public/screenshots/tool-detail.png)
+<img width="1917" height="948" alt="image" src="https://github.com/user-attachments/assets/24695e82-c57f-4a30-b7ca-3525da96181d" />
+<img width="1917" height="953" alt="image" src="https://github.com/user-attachments/assets/93a098eb-24e2-4503-bf1d-b05b96d77d7a" />
+<img width="1917" height="887" alt="image" src="https://github.com/user-attachments/assets/3cd37634-6241-4942-8c70-d10abb435e0d" />
+
 
 ### 🎨 **Dual Theme Support**
 - **Dark Mode**: Sleek dark interface with neon blue accents
@@ -79,7 +79,7 @@ Each AI tool has a comprehensive detail page featuring:
 - Custom toggle switch with visual indicators
 - Persistent theme preference
 
-![Theme Comparison](./public/screenshots/themes.png)
+<img width="1913" height="955" alt="image" src="https://github.com/user-attachments/assets/5a7fbb40-6613-44b5-9db9-f2845725c360" />
 
 ### 📱 **Responsive Design**
 - Fully responsive layout for mobile, tablet, and desktop
@@ -87,24 +87,11 @@ Each AI tool has a comprehensive detail page featuring:
 - Touch-optimized interactions
 - Adaptive grid layouts
 
----
-
-## 📸 Screenshots
-
-### Homepage
-![Homepage](./public/screenshots/homepage.png)
-
-### Category View
-![Category Page](./public/screenshots/category.png)
-
-### Tool Detail Page
-![Tool Detail](./public/screenshots/tool-detail.png)
-
-### Search Results
-![Search Results](./public/screenshots/search-results.png)
-
-### Filter Panel
-![Filter Panel](./public/screenshots/filter-panel.png)
+<div style="display:flex; gap:10px; flex-wrap:wrap;">
+  <img src="https://github.com/user-attachments/assets/f0b6d98d-f833-469d-a16f-3d543412139c" width="30%" />
+  <img src="https://github.com/user-attachments/assets/c8126c5c-28fc-475e-930c-20cc164fa620" width="30%" />
+  <img src="https://github.com/user-attachments/assets/32fcfa44-efc8-464e-9ff1-2076fcc32d7b" width="30%" />
+</div>
 
 ---
 
@@ -305,6 +292,3 @@ npm run lint
 ```
 
 ---
-
-## 📁 Project Structure
-
