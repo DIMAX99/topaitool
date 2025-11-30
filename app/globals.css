@@ -37,6 +37,10 @@
   --success-bg: rgba(16, 185, 129, 0.1);
   --success-border: #065f46;
   --error: #ef4444;
+
+  /* Background image */
+  --bg-image: url(/30.jpg);
+  --bg-color: #ffffff;
 }
 
 /* Light mode colors */
@@ -81,6 +85,8 @@
 .dark {
   --background: #0a0a0a;
   --foreground: #f9fafb;
+  --bg-image: url(/bg.jpg);
+  --bg-color: transparent;
 }
 
 @theme inline {

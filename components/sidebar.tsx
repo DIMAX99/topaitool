@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useTheme } from "@/app/layout";
+import { useTheme } from "@/lib/providers";
 import Image from "next/image";
 const aiCategories = [
     {
