@@ -135,6 +135,9 @@ export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isMobileOpen, onClose]);
 
+  // On mobile, always show full sidebar when open
+  const isExpanded = isMobileOpen || isHovered;
+
   return (
     <>
       {/* Mobile Backdrop */}
@@ -149,7 +152,7 @@ export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
         className={`fixed left-0 top-[42px] sm:top-[50px] md:top-[60px] bottom-0 bg-[var(--black)] shadow-lg transition-all duration-300 ease-in-out z-40 border-r border-[var(--blue-900)]
           ${isMobileOpen ? 'translate-x-0' : '-translate-x-full'} 
           lg:translate-x-0
-          ${isHovered ? "w-64" : "w-16"}`}
+          ${isExpanded ? "w-64" : "w-16"}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -172,7 +175,7 @@ export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
               <span className={`text-sm font-bold whitespace-nowrap transition-opacity duration-300 text-[var(--blue-600)] ${
-                isHovered ? "opacity-100" : "opacity-0 w-0"
+                isExpanded ? "opacity-100" : "opacity-0 w-0"
               }`}>
                 Home
               </span>
@@ -205,7 +208,7 @@ export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
                       {category.icon}
                     </span>
                     <span className={`text-sm font-medium whitespace-nowrap transition-opacity duration-300 ${
-                      isHovered ? "opacity-100" : "opacity-0"
+                      isExpanded ? "opacity-100" : "opacity-0"
                     }`}>
                       {category.name}
                     </span>
@@ -222,7 +225,7 @@ export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
           <div>
             <div className="px-4 mb-3">
               <h2 className={`text-xs font-semibold text-[var(--blue-500)] uppercase tracking-wider transition-opacity duration-300 ${
-                isHovered ? "opacity-100" : "opacity-0"
+                isExpanded ? "opacity-100" : "opacity-0"
               }`}>
                 More
               </h2>
@@ -236,7 +239,7 @@ export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
                 >
                   <span className={option.color}>{option.icon}</span>
                   <span className={`text-sm font-medium whitespace-nowrap transition-opacity duration-300 ${
-                    isHovered ? "opacity-100" : "opacity-0"
+                    isExpanded ? "opacity-100" : "opacity-0"
                   }`}>
                     {option.name}
                   </span>
@@ -250,7 +253,7 @@ export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
             <button
               onClick={toggleTheme}
               className={`w-full flex items-center py-2.5 px-2 transition-colors hover:bg-[var(--blue-900)]/20 rounded-lg ${
-                isHovered ? "justify-between" : "justify-center"
+                isExpanded ? "justify-between" : "justify-center"
               }`}
               title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
             >
@@ -263,7 +266,7 @@ export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                   )}
                 </svg>
-                {isHovered && (
+                {isExpanded && (
                   <span className="text-sm font-medium text-[var(--foreground)] whitespace-nowrap">
                     {isDarkMode ? "Dark Mode" : "Light Mode"}
                   </span>
@@ -271,18 +274,17 @@ export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
               </div>
               
               {/* Right side: Switch Toggle Image */}
-              {isHovered && (
+              {isExpanded && (
                 <div className="relative w-14 h-7 flex-shrink-0 ml-2 flex items-center justify-center">
-  <Image
-    src={isDarkMode ? "/switch-dark.png" : "/switch-light.png"}
-    alt="Theme Toggle"
-    width={56}
-    height={28}
-    className={isDarkMode ? "object-contain m-auto" : "object-contain"}
-    priority
-  />
-</div>
-
+                  <Image
+                    src={isDarkMode ? "/switch-dark.png" : "/switch-light.png"}
+                    alt="Theme Toggle"
+                    width={56}
+                    height={28}
+                    className={isDarkMode ? "object-contain m-auto" : "object-contain"}
+                    priority
+                  />
+                </div>
               )}
             </button>
           </div>

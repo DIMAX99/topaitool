@@ -5,7 +5,6 @@ import { AIToolCard } from "@/components/card";
 import { FilterDialog, FilterState } from "@/components/filter";
 import data2 from "@/data/data2.json";
 
-
 export default function Home() {
   
   
@@ -177,7 +176,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative z-10">
+    <div className="relative z-10 min-h-screen">
       {/* Filter Dialog */}
       <FilterDialog
         isOpen={isFilterOpen}
@@ -186,7 +185,7 @@ export default function Home() {
       />
 
       {/* Page Content */}
-      <div className="flex flex-col items-center justify-start px-2 sm:px-4 py-4 sm:py-8">
+      <div className="flex flex-col items-center justify-start px-4 sm:px-6 lg:px-8 xl:pr-80 py-4 sm:py-8 mx-auto max-w-[1920px]">
         {/* Search Bar with Filter Button - Fully Responsive */}
         <div className="w-full max-w-2xl mb-4 sm:mb-8 flex flex-col sm:flex-row gap-2 sm:gap-3">
           <div className="flex-1 relative order-1 sm:order-1">
@@ -234,8 +233,8 @@ export default function Home() {
         </div>
 
         {/* Switch Button - Responsive with horizontal scroll on mobile */}
-        <div className="w-full max-w-4xl mb-4 sm:mb-8 overflow-x-auto scrollbar-hide px-2 sm:px-0">
-          <div className="flex items-center gap-1 sm:gap-2 bg-[var(--black-200)]/90 backdrop-blur-md rounded-full p-1 border border-[var(--blue-800)] min-w-max mx-auto w-fit">
+        <div className="w-full max-w-4xl mb-4 sm:mb-8 overflow-x-auto scrollbar-hide">
+          <div className="flex items-center justify-center gap-1 sm:gap-2 bg-[var(--black-200)]/90 backdrop-blur-md rounded-full p-1 border border-[var(--blue-800)] min-w-max mx-auto w-fit">
             <button
               onClick={() => handleViewChange("latest")}
               className={`px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 rounded-full font-semibold text-[10px] sm:text-xs md:text-sm transition-all duration-200 whitespace-nowrap ${
@@ -281,8 +280,8 @@ export default function Home() {
 
         {/* Search Results Info - Responsive text size */}
         {searchQuery && (
-          <div className="w-full max-w-7xl mb-4 px-2 sm:px-4 lg:px-8 xl:px-16">
-            <p className="text-xs sm:text-sm text-[var(--text-primary)]">
+          <div className="w-full mb-4">
+            <p className="text-xs sm:text-sm text-[var(--text-primary)] text-center sm:text-left">
               Found <span className="font-bold text-[var(--blue-600)]">{allFilteredTools.length}</span> result{allFilteredTools.length !== 1 ? 's' : ''} for <span className="font-medium">{searchQuery}</span> in <span className="font-semibold text-[var(--blue-600)]">{
                 activeView === "top-free" ? "Top Free" :
                 activeView === "top-paid" ? "Top Paid" :
@@ -294,14 +293,14 @@ export default function Home() {
         )}
 
         {/* Tools Grid - Responsive */}
-        <section className="w-full px-2 sm:px-4 lg:px-8 xl:px-16 max-w-7xl mb-20">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--blue-600)] mb-4 sm:mb-6 md:mb-8">
+        <section className="w-full mb-20">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[var(--blue-600)] mb-4 sm:mb-6 md:mb-8 text-center sm:text-left">
             {getViewTitle()}
           </h2>
           
           {tools.length > 0 ? (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {tools.map((edge) => (
                   <AIToolCard
                     key={edge.node.id}
@@ -320,10 +319,10 @@ export default function Home() {
 
               {/* Show More Button */}
               {hasMore && (
-                <div className="flex justify-center mt-12">
+                <div className="flex justify-center mt-8 sm:mt-12">
                   <button
                     onClick={handleShowMore}
-                    className="px-8 py-4 bg-(--blue-600) hover:bg-(--blue-700) text-white rounded-full font-semibold text-base transition-all duration-200 shadow-lg shadow-(--blue-600)/50 hover:shadow-xl hover:shadow-(--blue-600)/60 hover:scale-105 flex items-center gap-2"
+                    className="px-6 sm:px-8 py-3 sm:py-4 bg-[var(--blue-600)] hover:bg-[var(--blue-700)] text-white rounded-full font-semibold text-sm sm:text-base transition-all duration-200 shadow-lg shadow-[var(--blue-600)]/50 hover:shadow-xl hover:shadow-[var(--blue-600)]/60 hover:scale-105 flex items-center gap-2"
                   >
                     <span>Show More AI Tools</span>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -337,7 +336,7 @@ export default function Home() {
               )}
             </>
           ) : (
-            <div className="bg-(--black-200)/90 backdrop-blur-md rounded-2xl p-12 border border-(--blue-800) text-center">
+            <div className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-2xl p-8 sm:p-12 border border-[var(--blue-800)] text-center">
               <svg className="w-20 h-20 text-(--text-tertiary) mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>

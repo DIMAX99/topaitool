@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect,createContext, useContext } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { FoldableHeader } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { RightSidebar } from "@/components/rightside";
+import SmoothScroll from "@/lib/smooth_scroll";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,8 +34,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isDarkMode, setIsDarkMode] = useState(true);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -62,29 +64,34 @@ export default function RootLayout({
           minHeight: '100vh'
         }}
       >
-        <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
-          {/* Header */}
-          <FoldableHeader 
-            onMenuClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)} 
-            isMobileOpen={isMobileSidebarOpen}
-          />
+        <SmoothScroll>
+          <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
+            {/* Header */}
+            <FoldableHeader 
+              onMenuClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)} 
+              isMobileOpen={isMobileSidebarOpen}
+              onRightSidebarToggle={() => setIsRightSidebarOpen(!isRightSidebarOpen)}
+              isRightSidebarOpen={isRightSidebarOpen}
+            />
 
-          {/* Sidebar with theme toggle */}
-          <Sidebar
-            isMobileOpen={isMobileSidebarOpen}
-            onClose={() => setIsMobileSidebarOpen(false)}
-          />
+            {/* Sidebar with theme toggle */}
+            <Sidebar
+              isMobileOpen={isMobileSidebarOpen}
+              onClose={() => setIsMobileSidebarOpen(false)}
+            />
 
-          {/* Right Sidebar - Hidden below xl (1280px) */}
-          <div className="hidden xl:block">
-            <RightSidebar />
-          </div>
+            {/* Right Sidebar - Works on all screen sizes */}
+            <RightSidebar 
+              isMobileOpen={isRightSidebarOpen}
+              onClose={() => setIsRightSidebarOpen(false)}
+            />
 
-          {/* Main Content Area - Responsive margins */}
-          <main className="ml-0 lg:ml-16 mt-[42px] sm:mt-[50px] md:mt-[60px]">
-            {children}
-          </main>
-        </ThemeContext.Provider>
+            {/* Main Content Area - Responsive margins */}
+            <main className="ml-0 lg:ml-16 mt-[42px] sm:mt-[50px] md:mt-[60px]">
+              {children}
+            </main>
+          </ThemeContext.Provider>
+        </SmoothScroll>
       </body>
     </html>
   );

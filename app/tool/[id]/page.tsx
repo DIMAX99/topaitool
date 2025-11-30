@@ -40,7 +40,7 @@ export default function ToolPage({ params }: ToolPageProps) {
 
   return (
     <div className="relative z-10 min-h-screen">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-8">
+      <div className="max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-80 py-4 sm:py-8">
         {/* Back Button - Responsive */}
         <button
           onClick={() => router.back()}

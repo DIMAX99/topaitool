@@ -41,9 +41,13 @@ const newsItems = [
     }
   ];
 
-export function RightSidebar() {
+interface RightSidebarProps {
+  isMobileOpen?: boolean;
+  onClose?: () => void;
+}
 
- const [now, setCurrentTime] = useState(() => Date.now()); 
+export function RightSidebar({ isMobileOpen = false, onClose }: RightSidebarProps) {
+  const [now, setCurrentTime] = useState(() => Date.now()); 
 
 useEffect(() => {
   const interval = setInterval(() => {
@@ -55,7 +59,18 @@ useEffect(() => {
 
   const [viewHistory, setViewHistory] = useState<ViewedTool[]>([]);
 
-  
+  // Lock body scroll when sidebar is open on mobile
+  useEffect(() => {
+    if (isMobileOpen && window.innerWidth < 1280) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileOpen]);
 
   // Load history from localStorage on mount
   useEffect(() => {
@@ -113,116 +128,129 @@ useEffect(() => {
   };
 
   return (
-    <aside className="fixed right-0 top-[60px] bottom-0 w-72 shadow-lg z-40 flex flex-col border-l border-[var(--blue-900)]">
-      <div className="h-full flex flex-col p-3 gap-3 overflow-hidden">
-        {/* News Section */}
-        <div className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-xl p-3 flex-1 flex flex-col min-h-0 border border-[var(--blue-900)]">
-          <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[var(--blue-800)] flex-shrink-0">
-            <svg
-              className="w-4 h-4 text-[var(--blue-400)]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-              />
-            </svg>
-            <h2 className="text-sm font-bold text-[var(--text-primary)]">Latest News</h2>
-          </div>
-          
-          <div className="space-y-2 flex-1 overflow-hidden hover:overflow-y-auto scrollbar-hide">
-            {newsItems.map((news) => (
-              <div
-                key={news.id}
-                className="bg-[var(--black-300)]/80 backdrop-blur-sm rounded-lg p-2.5 hover:bg-[var(--black-400)]/90 transition-colors cursor-pointer border border-[var(--blue-900)]/50"
-              >
-                <div className="flex items-start justify-between mb-1.5">
-                  <span className="text-[10px] font-medium text-[var(--blue-400)] bg-[var(--blue-900)]/30 px-1.5 py-0.5 rounded">
-                    {news.category}
-                  </span>
-                  <span className="text-[10px] text-[var(--text-tertiary)]">{news.time}</span>
-                </div>
-                <h3 className="text-xs font-semibold text-[var(--text-primary)] mb-1 leading-tight">
-                  {news.title}
-                </h3>
-                <p className="text-[10px] text-[var(--text-secondary)] line-clamp-2 leading-tight">
-                  {news.description}
-                </p>
-              </div>
-            ))}
-          </div>
-          
-          <button className="w-full text-xs text-[var(--blue-400)] hover:text-[var(--blue-300)] font-medium transition-colors mt-2 pt-2 border-t border-[var(--blue-800)] flex-shrink-0">
-            View all →
-          </button>
-        </div>
+    <>
+      {/* Mobile Backdrop */}
+      {isMobileOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[45] xl:hidden"
+          onClick={onClose}
+        />
+      )}
 
-        {/* History Section */}
-        <div className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-xl p-3 flex-1 flex flex-col min-h-0 border border-[var(--blue-900)]">
-          <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[var(--blue-800)] flex-shrink-0">
-            <svg
-              className="w-4 h-4 text-[var(--blue-400)]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <h2 className="text-sm font-bold text-[var(--text-primary)]">Recently Viewed</h2>
-          </div>
-          
-          <div className="space-y-1.5 flex-1 overflow-hidden hover:overflow-y-auto scrollbar-hide">
-            {viewHistory.length > 0 ? (
-              viewHistory.map((item) => (
+      <aside className={`fixed right-0 top-[42px] sm:top-[50px] md:top-[60px] bottom-0 w-64 sm:w-72 bg-[var(--black)] shadow-lg z-[46] xl:z-30 border-l border-[var(--blue-900)] transition-transform duration-300
+        ${isMobileOpen ? 'translate-x-0' : 'translate-x-full'}
+        xl:translate-x-0`}>
+
+        <div className="h-full flex flex-col p-2 sm:p-3 gap-2 sm:gap-3 overflow-hidden">
+          {/* News Section - 50% height */}
+          <div className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-lg sm:rounded-xl p-2 sm:p-3 flex-1 flex flex-col min-h-0 border border-[var(--blue-900)]">
+            <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3 pb-1.5 sm:pb-2 border-b border-[var(--blue-800)] flex-shrink-0">
+              <svg
+                className="w-3 h-3 sm:w-4 sm:h-4 text-[var(--blue-400)]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                />
+              </svg>
+              <h2 className="text-xs sm:text-sm font-bold text-[var(--text-primary)]">Latest News</h2>
+            </div>
+            
+            <div className="space-y-1.5 sm:space-y-2 flex-1 overflow-y-auto scrollbar-hide">
+              {newsItems.map((news) => (
                 <div
-                  key={`${item.id}-${item.viewedAt}`}
-                  className="flex items-center gap-2.5 p-2 bg-[var(--black-300)]/80 backdrop-blur-sm rounded-lg hover:bg-[var(--black-400)]/90 transition-colors cursor-pointer border border-[var(--blue-900)]/50"
+                  key={news.id}
+                  className="bg-[var(--black-300)]/80 backdrop-blur-sm rounded-md sm:rounded-lg p-2 sm:p-2.5 hover:bg-[var(--black-400)]/90 transition-colors cursor-pointer border border-[var(--blue-900)]/50"
                 >
-                  <img
-                    src={item.logo}
-                    alt={item.name}
-                    className="w-8 h-8 rounded-md flex-shrink-0 object-cover"
-                  />
-                  <div className="flex-1 min-w-0">
-                    <h4 className="text-xs font-semibold text-[var(--text-primary)] truncate">
-                      {item.name}
-                    </h4>
-                    <p className="text-[10px] text-[var(--text-tertiary)]">
-                      {getTimeAgo(item.viewedAt)}
-                    </p>
+                  <div className="flex items-start justify-between mb-1">
+                    <span className="text-[9px] sm:text-[10px] font-medium text-[var(--blue-400)] bg-[var(--blue-900)]/30 px-1 sm:px-1.5 py-0.5 rounded">
+                      {news.category}
+                    </span>
+                    <span className="text-[9px] sm:text-[10px] text-[var(--text-tertiary)]">{news.time}</span>
                   </div>
+                  <h3 className="text-[10px] sm:text-xs font-semibold text-[var(--text-primary)] mb-0.5 sm:mb-1 leading-tight">
+                    {news.title}
+                  </h3>
+                  <p className="text-[9px] sm:text-[10px] text-[var(--text-secondary)] line-clamp-2 leading-tight">
+                    {news.description}
+                  </p>
                 </div>
-              ))
-            ) : (
-              <div className="flex flex-col items-center justify-center py-8 text-center">
-                <svg className="w-12 h-12 text-[var(--text-tertiary)] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <p className="text-xs text-[var(--text-secondary)]">No tools viewed yet</p>
-                <p className="text-[10px] text-[var(--text-tertiary)] mt-1">Start exploring to see your history</p>
-              </div>
+              ))}
+            </div>
+            
+            <button className="w-full text-[10px] sm:text-xs text-[var(--blue-400)] hover:text-[var(--blue-300)] font-medium transition-colors mt-1.5 sm:mt-2 pt-1.5 sm:pt-2 border-t border-[var(--blue-800)] flex-shrink-0">
+              View all →
+            </button>
+          </div>
+
+          {/* History Section - 50% height */}
+          <div className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-lg sm:rounded-xl p-2 sm:p-3 flex-1 flex flex-col min-h-0 border border-[var(--blue-900)]">
+            <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3 pb-1.5 sm:pb-2 border-b border-[var(--blue-800)] flex-shrink-0">
+              <svg
+                className="w-3 h-3 sm:w-4 sm:h-4 text-[var(--blue-400)]"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <h2 className="text-xs sm:text-sm font-bold text-[var(--text-primary)]">Recently Viewed</h2>
+            </div>
+            
+            <div className="space-y-1 sm:space-y-1.5 flex-1 overflow-y-auto scrollbar-hide">
+              {viewHistory.length > 0 ? (
+                viewHistory.map((item) => (
+                  <div
+                    key={`${item.id}-${item.viewedAt}`}
+                    className="flex items-center gap-2 sm:gap-2.5 p-1.5 sm:p-2 bg-[var(--black-300)]/80 backdrop-blur-sm rounded-md sm:rounded-lg hover:bg-[var(--black-400)]/90 transition-colors cursor-pointer border border-[var(--blue-900)]/50"
+                  >
+                    <img
+                      src={item.logo}
+                      alt={item.name}
+                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-md flex-shrink-0 object-cover"
+                    />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-[10px] sm:text-xs font-semibold text-[var(--text-primary)] truncate">
+                        {item.name}
+                      </h4>
+                      <p className="text-[9px] sm:text-[10px] text-[var(--text-tertiary)]">
+                        {getTimeAgo(item.viewedAt)}
+                      </p>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className="flex flex-col items-center justify-center py-6 sm:py-8 text-center">
+                  <svg className="w-10 h-10 sm:w-12 sm:h-12 text-[var(--text-tertiary)] mb-1.5 sm:mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-[10px] sm:text-xs text-[var(--text-secondary)]">No tools viewed yet</p>
+                  <p className="text-[9px] sm:text-[10px] text-[var(--text-tertiary)] mt-0.5 sm:mt-1">Start exploring to see your history</p>
+                </div>
+              )}
+            </div>
+            
+            {viewHistory.length > 0 && (
+              <button 
+                onClick={clearHistory}
+                className="w-full text-[10px] sm:text-xs text-[var(--blue-400)] hover:text-[var(--blue-300)] font-medium transition-colors mt-1.5 sm:mt-2 pt-1.5 sm:pt-2 border-t border-[var(--blue-800)] flex-shrink-0"
+              >
+                Clear history
+              </button>
             )}
           </div>
-          
-          {viewHistory.length > 0 && (
-            <button 
-              onClick={clearHistory}
-              className="w-full text-xs text-[var(--blue-400)] hover:text-[var(--blue-300)] font-medium transition-colors mt-2 pt-2 border-t border-[var(--blue-800)] flex-shrink-0"
-            >
-              Clear history
-            </button>
-          )}
         </div>
-      </div>
-    </aside>
+      </aside>
+    </>
   );
 }
