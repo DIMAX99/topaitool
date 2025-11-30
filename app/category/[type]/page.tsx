@@ -46,7 +46,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <div className="relative z-10 min-h-screen">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-8">
+      <div className="max-w-7xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:pr-80 py-4 sm:py-8">
         {/* Breadcrumb Navigation - Responsive */}
         <nav className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm mb-3 sm:mb-4">
           <Link href="/" className="text-[var(--blue-400)] hover:text-[var(--blue-300)] transition-colors">
@@ -103,7 +103,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         {/* Tools Grid - Responsive */}
         {filteredTools.length > 0 ? (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
               {visibleTools.map((edge) => (
                 <AIToolCard
                   key={edge.node.id}

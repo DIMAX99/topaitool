@@ -273,15 +273,14 @@ export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
                 )}
               </div>
               
-              {/* Right side: Switch Toggle Image */}
-              {isExpanded && (
+               {isExpanded && (
                 <div className="relative w-14 h-7 flex-shrink-0 ml-2 flex items-center justify-center">
                   <Image
-                    src={isDarkMode ? "/switch-dark.png" : "/switch-light.png"}
+                    src={isDarkMode ? "/on.png" : "/off.png"}
                     alt="Theme Toggle"
-                    width={56}
-                    height={28}
-                    className={isDarkMode ? "object-contain m-auto" : "object-contain"}
+                    width={50}
+                    height={24}
+                    className="object-contain"
                     priority
                   />
                 </div>
