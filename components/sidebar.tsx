@@ -1,17 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useTheme } from "@/app/layout";
 import Image from "next/image";
-
-export function Sidebar() {
-  const [isHovered, setIsHovered] = useState(false);
-  const pathname = usePathname();
-  const { isDarkMode, toggleTheme } = useTheme();
-
-  const aiCategories = [
+const aiCategories = [
     {
       name: "Generate Image",
       slug: "generate-image",
@@ -85,7 +79,7 @@ export function Sidebar() {
       ),
     }
   ];
-
+  
   const additionalOptions = [
     {
       name: "Offers Zone",
@@ -115,132 +109,170 @@ export function Sidebar() {
       color: "text-[var(--blue-400)]"
     }
   ];
+interface SidebarProps {
+  isMobileOpen: boolean;
+  onClose: () => void;
+}
+
+export function Sidebar({ isMobileOpen, onClose }: SidebarProps) {
+  const [isHovered, setIsHovered] = useState(false);
+  const pathname = usePathname();
+  const { isDarkMode, toggleTheme } = useTheme();
+
+  // Close sidebar when clicking outside on mobile
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (isMobileOpen && !target.closest('aside') && !target.closest('button[aria-label="Toggle menu"]')) {
+        onClose();
+      }
+    };
+
+    if (isMobileOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMobileOpen, onClose]);
 
   return (
-    <aside
-      className={`fixed left-0 top-[60px] bottom-0 bg-[var(--black)] shadow-lg transition-all duration-300 ease-in-out z-40 border-r border-[var(--blue-900)] ${
-        isHovered ? "w-64" : "w-16"
-      }`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="h-full overflow-y-auto scrollbar-hide py-4">
-        {/* Home Button */}
-        <div className="mb-6 px-2">
-          <Link
-            href="/"
-            className={`w-full flex items-center gap-3 px-2 py-3 rounded-lg transition-colors relative ${
-              pathname === "/"
-                ? "bg-[var(--blue-900)]/30 text-[var(--blue-600)]"
-                : "text-[var(--foreground)] hover:bg-[var(--blue-900)]/20"
-            }`}
-          >
-            {pathname === "/" && (
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--blue-500)] rounded-r"></div>
-            )}
-            <svg className="w-6 h-6 text-[var(--blue-400)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-            <span className={`text-sm font-bold whitespace-nowrap transition-opacity duration-300 text-[var(--blue-600)] ${
-              isHovered ? "opacity-100" : "opacity-0 w-0"
-            }`}>
-              Home
-            </span>
-          </Link>
-        </div>
+    <>
+      {/* Mobile Backdrop */}
+      {isMobileOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+          onClick={onClose}
+        />
+      )}
 
-        {/* Divider */}
-        <div className="border-t border-[var(--blue-800)] mb-6"></div>
+      <aside
+        className={`fixed left-0 top-[42px] sm:top-[50px] md:top-[60px] bottom-0 bg-[var(--black)] shadow-lg transition-all duration-300 ease-in-out z-40 border-r border-[var(--blue-900)]
+          ${isMobileOpen ? 'translate-x-0' : '-translate-x-full'} 
+          lg:translate-x-0
+          ${isHovered ? "w-64" : "w-16"}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className="h-full overflow-y-auto scrollbar-hide py-4">
+          {/* Home Button */}
+          <div className="mb-6 px-2">
+            <Link
+              href="/"
+              onClick={() => onClose()}
+              className={`w-full flex items-center gap-3 px-2 py-3 rounded-lg transition-colors relative ${
+                pathname === "/"
+                  ? "bg-[var(--blue-900)]/30 text-[var(--blue-600)]"
+                  : "text-[var(--foreground)] hover:bg-[var(--blue-900)]/20"
+              }`}
+            >
+              {pathname === "/" && (
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--blue-500)] rounded-r"></div>
+              )}
+              <svg className="w-6 h-6 text-[var(--blue-400)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <span className={`text-sm font-bold whitespace-nowrap transition-opacity duration-300 text-[var(--blue-600)] ${
+                isHovered ? "opacity-100" : "opacity-0 w-0"
+              }`}>
+                Home
+              </span>
+            </Link>
+          </div>
 
-        {/* AI Categories */}
-        <div className="mb-6">
-          <nav className="space-y-1">
-            {aiCategories.map((category) => {
-              const isActive = pathname === `/category/${category.slug}`;
-              return (
-                <Link
-                  key={category.slug}
-                  href={`/category/${category.slug}`}
-                  className={`w-full flex items-center gap-3 px-4 py-3 transition-colors relative ${
-                    isActive
-                      ? "bg-[var(--blue-900)]/30 text-[var(--blue-600)]"
-                      : "text-[var(--foreground)] hover:bg-[var(--blue-900)]/20"
-                  }`}
+          {/* Divider */}
+          <div className="border-t border-[var(--blue-800)] mb-6"></div>
+
+          {/* AI Categories */}
+          <div className="mb-6">
+            <nav className="space-y-1">
+              {aiCategories.map((category) => {
+                const isActive = pathname === `/category/${category.slug}`;
+                return (
+                  <Link
+                    key={category.slug}
+                    href={`/category/${category.slug}`}
+                    onClick={() => onClose()}
+                    className={`w-full flex items-center gap-3 px-4 py-3 transition-colors relative ${
+                      isActive
+                        ? "bg-[var(--blue-900)]/30 text-[var(--blue-600)]"
+                        : "text-[var(--foreground)] hover:bg-[var(--blue-900)]/20"
+                    }`}
+                  >
+                    {isActive && (
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--blue-500)]"></div>
+                    )}
+                    <span className={isActive ? "text-[var(--blue-400)]" : "text-[var(--blue-400)]"}>
+                      {category.icon}
+                    </span>
+                    <span className={`text-sm font-medium whitespace-nowrap transition-opacity duration-300 ${
+                      isHovered ? "opacity-100" : "opacity-0"
+                    }`}>
+                      {category.name}
+                    </span>
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-[var(--blue-800)] my-4"></div>
+
+          {/* Additional Options */}
+          <div>
+            <div className="px-4 mb-3">
+              <h2 className={`text-xs font-semibold text-[var(--blue-500)] uppercase tracking-wider transition-opacity duration-300 ${
+                isHovered ? "opacity-100" : "opacity-0"
+              }`}>
+                More
+              </h2>
+            </div>
+            <nav className="space-y-1">
+              {additionalOptions.map((option) => (
+                <button
+                  key={option.name}
+                  onClick={() => onClose()}
+                  className="w-full flex items-center gap-3 px-4 py-3 text-[var(--foreground)] hover:bg-[var(--blue-900)]/20 transition-colors"
                 >
-                  {isActive && (
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--blue-500)]"></div>
-                  )}
-                  <span className={isActive ? "text-[var(--blue-400)]" : "text-[var(--blue-400)]"}>
-                    {category.icon}
-                  </span>
+                  <span className={option.color}>{option.icon}</span>
                   <span className={`text-sm font-medium whitespace-nowrap transition-opacity duration-300 ${
                     isHovered ? "opacity-100" : "opacity-0"
                   }`}>
-                    {category.name}
+                    {option.name}
                   </span>
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-[var(--blue-800)] my-4"></div>
-
-        {/* Additional Options */}
-        <div>
-          <div className="px-4 mb-3">
-            <h2 className={`text-xs font-semibold text-[var(--blue-500)] uppercase tracking-wider transition-opacity duration-300 ${
-              isHovered ? "opacity-100" : "opacity-0"
-            }`}>
-              More
-            </h2>
+                </button>
+              ))}
+            </nav>
           </div>
-          <nav className="space-y-1">
-            {additionalOptions.map((option) => (
-              <button
-                key={option.name}
-                className="w-full flex items-center gap-3 px-4 py-3 text-[var(--foreground)] hover:bg-[var(--blue-900)]/20 transition-colors"
-              >
-                <span className={option.color}>{option.icon}</span>
-                <span className={`text-sm font-medium whitespace-nowrap transition-opacity duration-300 ${
-                  isHovered ? "opacity-100" : "opacity-0"
-                }`}>
-                  {option.name}
-                </span>
-              </button>
-            ))}
-          </nav>
-        </div>
 
-        {/* Theme Toggle Switch - Below Support */}
-        <div className="mt-4 px-2">
-          <button
-            onClick={toggleTheme}
-            className={`w-full flex items-center py-2.5 px-2 transition-colors hover:bg-[var(--blue-900)]/20 rounded-lg ${
-              isHovered ? "justify-between" : "justify-center"
-            }`}
-            title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-          >
-            {/* Left side: Icon and Label */}
-            <div className="flex items-center gap-2.5 flex-shrink-0">
-              <svg className="w-5 h-5 text-[var(--blue-400)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isDarkMode ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          {/* Theme Toggle Switch - Below Support */}
+          <div className="mt-4 px-2">
+            <button
+              onClick={toggleTheme}
+              className={`w-full flex items-center py-2.5 px-2 transition-colors hover:bg-[var(--blue-900)]/20 rounded-lg ${
+                isHovered ? "justify-between" : "justify-center"
+              }`}
+              title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            >
+              {/* Left side: Icon and Label */}
+              <div className="flex items-center gap-2.5 flex-shrink-0">
+                <svg className="w-5 h-5 text-[var(--blue-400)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {isDarkMode ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  )}
+                </svg>
+                {isHovered && (
+                  <span className="text-sm font-medium text-[var(--foreground)] whitespace-nowrap">
+                    {isDarkMode ? "Dark Mode" : "Light Mode"}
+                  </span>
                 )}
-              </svg>
+              </div>
+              
+              {/* Right side: Switch Toggle Image */}
               {isHovered && (
-                <span className="text-sm font-medium text-[var(--foreground)] whitespace-nowrap">
-                  {isDarkMode ? "Dark Mode" : "Light Mode"}
-                </span>
-              )}
-            </div>
-            
-            {/* Right side: Switch Toggle Image */}
-            {isHovered && (
-              <div className="relative w-14 h-7 flex-shrink-0 ml-2 flex items-center justify-center">
+                <div className="relative w-14 h-7 flex-shrink-0 ml-2 flex items-center justify-center">
   <Image
     src={isDarkMode ? "/switch-dark.png" : "/switch-light.png"}
     alt="Theme Toggle"
@@ -251,10 +283,11 @@ export function Sidebar() {
   />
 </div>
 
-            )}
-          </button>
+              )}
+            </button>
+          </div>
         </div>
-      </div>
-    </aside>
+      </aside>
+    </>
   );
 }

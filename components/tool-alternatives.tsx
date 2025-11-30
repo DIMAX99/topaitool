@@ -2,6 +2,7 @@
 
 import { AIToolCard } from "@/components/card";
 import data2 from "@/data/data2.json";
+import { useMemo } from "react";
 
 interface ToolAlternativesProps {
   currentToolId: string;
@@ -9,21 +10,20 @@ interface ToolAlternativesProps {
 }
 
 export function ToolAlternatives({ currentToolId, categories }: ToolAlternativesProps) {
-  // Find similar tools based on matching categories
-  const alternatives = data2.data.posts.edges
-    .filter((edge) => {
-      // Exclude current tool
-      if (edge.node.id === currentToolId) return false;
-      
-      // Check if tool has any matching categories
-      return edge.node.topics.edges.some((topic) =>
-        categories.includes(topic.node.name)
-      );
-    })
-    .slice(0, 10); // Limit to 10 alternatives
+  const alternatives = useMemo(() => 
+    data2.data.posts.edges
+      .filter((edge) => {
+        if (edge.node.id === currentToolId) return false;
+        return edge.node.topics.edges.some((topic) =>
+          categories.includes(topic.node.name)
+        );
+      })
+      .slice(0, 10),
+    [currentToolId, categories]
+  );
 
   if (alternatives.length === 0) {
-    return null; // Don't show section if no alternatives
+    return null; 
   }
 
   return (

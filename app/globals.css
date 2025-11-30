@@ -109,15 +109,20 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
+
 .scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
 }
 
 /* Custom thin scrollbar */
@@ -139,12 +144,12 @@ body {
   background-color: transparent;
 }
 
-/* Hide scrollbar globally */
+
 * {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
 *::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }

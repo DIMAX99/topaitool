@@ -48,17 +48,17 @@ export function ToolHero({
 
   return (
     <>
-      <section className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-2xl p-6 border border-[var(--blue-800)] shadow-xl shadow-[var(--blue-600)]/10 mb-6 relative">
+      <section className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-[var(--blue-800)] shadow-xl shadow-[var(--blue-600)]/10 mb-3 sm:mb-4 md:mb-6 relative">
         {/* Redirect Icon - Top Right Corner */}
         <a
           href={website}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute top-6 right-6 p-2 bg-[var(--blue-600)] hover:bg-[var(--blue-700)] rounded-lg transition-all duration-200 shadow-lg shadow-[var(--blue-600)]/50 hover:shadow-xl hover:shadow-[var(--blue-600)]/60 hover:scale-110 group"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 p-1.5 sm:p-2 bg-[var(--blue-600)] hover:bg-[var(--blue-700)] rounded-lg transition-all duration-200 shadow-lg shadow-[var(--blue-600)]/50 hover:shadow-xl hover:shadow-[var(--blue-600)]/60 hover:scale-110 group"
           title="Visit Website"
         >
           <svg
-            className="w-5 h-5 text-[var(--text-primary)]"
+            className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--text-primary)]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -72,10 +72,10 @@ export function ToolHero({
           </svg>
         </a>
 
-        <div className="flex items-start gap-4">
+        <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="w-20 h-20 rounded-xl overflow-hidden border-2 border-[var(--blue-600)] shadow-md shadow-[var(--blue-600)]/30 bg-[var(--black-300)]">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg sm:rounded-xl overflow-hidden border-2 border-[var(--blue-600)] shadow-md shadow-[var(--blue-600)]/30 bg-[var(--black-300)]">
               <img
                 src={thumbnail}
                 alt={name}
@@ -85,15 +85,15 @@ export function ToolHero({
           </div>
 
           {/* Name and Description */}
-          <div className="flex-1 min-w-0 pr-12">
+          <div className="flex-1 min-w-0 pr-8 sm:pr-10 md:pr-12">
             {/* Name with Verified Badge - Blue heading */}
-            <div className="flex items-center gap-2 mb-2">
-              <h1 className="text-2xl font-bold text-[var(--blue-600)]">
+            <div className="flex items-center gap-1.5 sm:gap-2 mb-1 sm:mb-2">
+              <h1 className="text-base sm:text-xl md:text-2xl font-bold text-[var(--blue-600)] truncate">
                 {name}
               </h1>
               {verified && (
                 <svg
-                  className="w-5 h-5 text-[var(--blue-400)] flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--blue-400)] flex-shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -107,15 +107,15 @@ export function ToolHero({
             </div>
 
             {/* Tagline - Black text */}
-            <p className="text-base text-[var(--text-primary)] font-medium mb-3">
+            <p className="text-xs sm:text-sm md:text-base text-[var(--text-primary)] font-medium mb-2 sm:mb-3 line-clamp-2">
               {tagline}
             </p>
             {/* Tags - Black text */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {topics.edges.map((topic) => (
                 <span
                   key={topic.node.id}
-                  className="px-2.5 py-1 bg-[var(--black-400)] border border-[var(--blue-800)] rounded-full text-xs font-medium text-[var(--text-primary)]"
+                  className="px-2 sm:px-2.5 py-0.5 sm:py-1 bg-[var(--black-400)] border border-[var(--blue-800)] rounded-full text-[10px] sm:text-xs font-medium text-[var(--text-primary)]"
                 >
                   {topic.node.name}
                 </span>
@@ -125,7 +125,7 @@ export function ToolHero({
         </div>
 
         {/* Tool Media Gallery */}
-        <section className="mt-6">
+        <section className="mt-3 sm:mt-4 md:mt-6">
           <ToolMedia
             media={media}
             name={name}
@@ -134,7 +134,7 @@ export function ToolHero({
       </section>
 
       {/* Tool Description & Pricing Section */}
-      <div className="mb-6">
+      <div className="mb-3 sm:mb-4 md:mb-6">
         <ToolDetails
           description={description}
           pricing={pricing}
@@ -143,7 +143,7 @@ export function ToolHero({
       </div>
 
       {/* Tool Engagement Section */}
-      <div className="mb-6">
+      <div className="mb-3 sm:mb-4 md:mb-6">
         <ToolEngagement
           votesCount={votesCount}
           website={website}

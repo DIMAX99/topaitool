@@ -34,6 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -63,10 +64,16 @@ export default function RootLayout({
       >
         <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
           {/* Header */}
-          <FoldableHeader />
+          <FoldableHeader 
+            onMenuClick={() => setIsMobileSidebarOpen(!isMobileSidebarOpen)} 
+            isMobileOpen={isMobileSidebarOpen}
+          />
 
           {/* Sidebar with theme toggle */}
-          <Sidebar />
+          <Sidebar
+            isMobileOpen={isMobileSidebarOpen}
+            onClose={() => setIsMobileSidebarOpen(false)}
+          />
 
           {/* Right Sidebar - Hidden below xl (1280px) */}
           <div className="hidden xl:block">
@@ -74,7 +81,7 @@ export default function RootLayout({
           </div>
 
           {/* Main Content Area - Responsive margins */}
-          <main className="ml-16 xl:mr-72 mr-0 pt-[60px]">
+          <main className="ml-0 lg:ml-16 mt-[42px] sm:mt-[50px] md:mt-[60px]">
             {children}
           </main>
         </ThemeContext.Provider>

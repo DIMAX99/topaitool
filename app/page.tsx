@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { AIToolCard } from "@/components/card";
 import { FilterDialog, FilterState } from "@/components/filter";
 import data2 from "@/data/data2.json";
 
+
 export default function Home() {
+  
+  
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [activeView, setActiveView] = useState<"latest" | "top-free" | "top-paid" | "grossing">("latest");
   const [visibleCount, setVisibleCount] = useState(6);

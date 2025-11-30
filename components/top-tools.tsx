@@ -1,32 +1,39 @@
 "use client";
 
 import data2 from "@/data/data2.json";
+import { useMemo } from "react";
 
 export function TopTools() {
-  // Free tools (filter by pricing with $0 or free tier)
-  const topFreeTools = data2.data.posts.edges
-    .filter((edge) => 
-      edge.node.pricing.some((p) => 
-        p["pricing in usd"] === "0" || p["plan-type"].toLowerCase().includes("free")
+ const topFreeTools = useMemo(() => 
+    data2.data.posts.edges
+      .filter((edge) => 
+        edge.node.pricing.some((p) => 
+          p["pricing in usd"] === "0" || p["plan-type"].toLowerCase().includes("free")
+        )
       )
-    )
-    .slice(0, 4);
+      .slice(0, 4),
+    []
+  );
 
-  // Paid tools (filter by pricing with non-zero cost)
-  const topPaidTools = data2.data.posts.edges
-    .filter((edge) => 
-      edge.node.pricing.some((p) => 
-        p["pricing in usd"] !== "0" && 
-        p["pricing in usd"] !== "Custom" &&
-        !p["plan-type"].toLowerCase().includes("free")
+  const topPaidTools = useMemo(() =>
+    data2.data.posts.edges
+      .filter((edge) => 
+        edge.node.pricing.some((p) => 
+          p["pricing in usd"] !== "0" && 
+          p["pricing in usd"] !== "Custom" &&
+          !p["plan-type"].toLowerCase().includes("free")
+        )
       )
-    )
-    .slice(0, 3);
+      .slice(0, 3),
+    []
+  );
 
-  // Top grossing tools (sorted by votes as a proxy for popularity)
-  const topGrossingTools = data2.data.posts.edges
-    .sort((a, b) => b.node.votesCount - a.node.votesCount)
-    .slice(0, 4);
+  const topGrossingTools = useMemo(() =>
+    [...data2.data.posts.edges]
+      .sort((a, b) => b.node.votesCount - a.node.votesCount)
+      .slice(0, 4),
+    []
+  );
 
   return (
     <section className="w-full px-4 sm:px-8 lg:px-16 max-w-7xl mb-20">

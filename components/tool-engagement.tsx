@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import { useMemo } from "react";
 interface ToolEngagementProps {
   votesCount: number;
   website: string;
@@ -37,9 +37,7 @@ export function ToolEngagement({ votesCount, website, pricing }: ToolEngagementP
       setNewComment("");
     }
   };
-
-  // Sample discussions
-  const discussions = [
+   const discussions = useMemo(() => [
     {
       id: 1,
       user: "John Doe",
@@ -64,7 +62,7 @@ export function ToolEngagement({ votesCount, website, pricing }: ToolEngagementP
       time: "1 day ago",
       likes: 15
     }
-  ];
+  ], []);
 
   return (
     <section className="bg-[var(--black-200)]/90 backdrop-blur-md rounded-2xl p-3 sm:p-4 md:p-6 border border-[var(--blue-800)] shadow-xl shadow-[var(--blue-600)]/10">

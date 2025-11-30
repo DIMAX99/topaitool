@@ -10,12 +10,7 @@ interface ViewedTool {
   viewedAt: number;
 }
 
-
-export function RightSidebar() {
-  const now = Date.now();
-  const [viewHistory, setViewHistory] = useState<ViewedTool[]>([]);
-
-  const newsItems = [
+const newsItems = [
     {
       id: 1,
       title: "OpenAI Releases GPT-5",
@@ -46,11 +41,33 @@ export function RightSidebar() {
     }
   ];
 
+export function RightSidebar() {
+
+ const [now, setCurrentTime] = useState(() => Date.now()); 
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentTime(Date.now());
+  }, 60000);
+
+  return () => clearInterval(interval);
+}, []);
+
+  const [viewHistory, setViewHistory] = useState<ViewedTool[]>([]);
+
+  
+
   // Load history from localStorage on mount
   useEffect(() => {
     const savedHistory = localStorage.getItem("viewedTools");
     if (savedHistory) {
-      setViewHistory(JSON.parse(savedHistory));
+      queueMicrotask(() => {
+      try {
+        setViewHistory(JSON.parse(savedHistory));
+      } catch {
+        setViewHistory([]);
+      }
+    });
     }
 
     // Listen for custom event when a tool is viewed
@@ -84,7 +101,7 @@ export function RightSidebar() {
 
   const getTimeAgo = (timestamp: number) => {
     
-    const diff = now - timestamp;
+    const diff = now!=null ? now - timestamp : 0;
     const minutes = Math.floor(diff / 60000);
     const hours = Math.floor(diff / 3600000);
     const days = Math.floor(diff / 86400000);
