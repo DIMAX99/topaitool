@@ -18,6 +18,22 @@ A modern, feature-rich directory platform for discovering and exploring AI tools
 - [License](#license)
 
 ---
+Dataset Used For this Website is Collected From - 
+1) ProductHunt Official public api
+2) Manual Addition of data Like Pricing and Type using AI like Gemini and Chatgpt as Cant get From official API.
+
+Tech Stack used
+-TypeScript (Nextjs)
+Framework - Lenis (For smooth Scrolling)
+
+Design Insipiration Taken From 
+- Theresanaiforthat
+
+AI Prompts used -
+1) Create a ToolHero component that displays comprehensive tool information including name, tagline, description, thumbnail, topics, media gallery, vote count, website link, pricing tiers, and a verified badge (if votes > 100). Pass all the tool node properties as props to this component.
+2)Create a Next.js client component for displaying individual AI tool details. It should accept tool data including id, name, tagline, description, thumbnail, topics, media array, votes count, website, and pricing information. Add a back button that uses Next.js router to navigate back. Make it responsive with Tailwind CSS.
+3)Process data.json to add Type based on the Following types ["Music","Generate Image","Generate Video","For Text"] to the nodes according to the Tagline and Tags of the Node following the structure of Type to be added to each nodes of the data.json.Structure - Type:[Array of String type]
+
 
 ## ✨ Features
 
