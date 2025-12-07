@@ -5,7 +5,7 @@ A modern, feature-rich directory platform for discovering and exploring AI tools
 <img width="1917" height="958" alt="image" src="https://github.com/user-attachments/assets/fb80e885-e490-4e89-918a-89d10fc96e30" />
 ---
 
-## 📋 Table of Contents
+## 📋 Table of Contents.   
 
 - [Features](#features)
 - [Screenshots](#screenshots)
